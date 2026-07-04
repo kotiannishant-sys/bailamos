@@ -1,0 +1,174 @@
+{
+    "events": [
+        {
+            "id": "event-1",
+            "title": "Salsa Night at Kitty Su",
+            "summary": "",
+            "venue": "Kitty Su, The Lalit Mumbai",
+            "venueUrl": "https://maps.google.com/?q=Kitty+Su,+The+Lalit+Mumbai",
+            "type": "Salsa",
+            "organizers": [
+                {
+                    "name": "Latin Nights Mumbai",
+                    "url": "https://www.instagram.com/latinnightsmumbai/"
+                }
+            ],
+            "startDateTime": "2026-07-04T21:00:00",
+            "endDateTime": "2026-07-05T01:00:00",
+            "cancelled": true
+        },
+        {
+            "id": "event-2",
+            "title": "Bachata & Kizomba Night",
+            "summary": "",
+            "venue": "The Oasis, Juhu",
+            "venueUrl": "https://maps.google.com/?q=The+Oasis,+Juhu",
+            "type": "Bachata & Kizomba",
+            "organizers": [
+                {
+                    "name": "Mumbai Latin Dance Community",
+                    "url": "https://www.instagram.com/mumbailatindancecommunity/"
+                }
+            ],
+            "startDateTime": "2026-07-06T21:00:00",
+            "endDateTime": "2026-07-07T01:00:00",
+            "cancelled": false
+        },
+        {
+            "id": "event-3",
+            "title": "Salsa & Bachata Workshop",
+            "summary": "",
+            "venue": "Studio 60, Andheri",
+            "venueUrl": "https://maps.google.com/?q=Studio+60,+Andheri",
+            "type": "Workshop",
+            "organizers": [
+                {
+                    "name": "Salsa India",
+                    "url": "https://www.instagram.com/salsaindia/"
+                }
+            ],
+            "startDateTime": "2026-07-07T19:00:00",
+            "endDateTime": "2026-07-07T21:00:00",
+            "cancelled": false
+        },
+        {
+            "id": "event-4",
+            "title": "Latin Night at The Irish House",
+            "summary": "",
+            "venue": "The Irish House, Bandra",
+            "venueUrl": "https://maps.google.com/?q=The+Irish+House,+Bandra",
+            "type": "Salsa",
+            "organizers": [
+                {
+                    "name": "Latin Nights Mumbai",
+                    "url": "https://www.instagram.com/latinnightsmumbai/"
+                }
+            ],
+            "startDateTime": "2026-07-12T21:00:00",
+            "endDateTime": "2026-07-13T01:00:00",
+            "cancelled": false
+        },
+        {
+            "id": "event-5",
+            "title": "Salsa & Bachata Night",
+            "summary": "",
+            "venue": "The Oasis, Juhu",
+            "venueUrl": "https://maps.google.com/?q=The+Oasis,+Juhu",
+            "type": "Salsa & Bachata",
+            "organizers": [
+                {
+                    "name": "Mumbai Latin Dance Community",
+                    "url": "https://www.instagram.com/mumbailatindancecommunity/"
+                }
+            ],
+            "startDateTime": "2026-07-13T21:00:00",
+            "endDateTime": "2026-07-14T01:00:00",
+            "cancelled": false
+        },
+        {
+            "id": "event-6",
+            "title": "Salsa Night at Kitty Su",
+            "summary": "",
+            "venue": "Kitty Su, The Lalit Mumbai",
+            "venueUrl": "https://maps.google.com/?q=Kitty+Su,+The+Lalit+Mumbai",
+            "type": "Salsa",
+            "organizers": [
+                {
+                    "name": "Latin Nights Mumbai",
+                    "url": "https://www.instagram.com/latinnightsmumbai/"
+                }
+            ],
+            "startDateTime": "2026-07-19T21:00:00",
+            "endDateTime": "2026-07-20T01:00:00",
+            "cancelled": false
+        },
+        {
+            "id": "event-7",
+            "title": "Bachata & Kizomba Night",
+            "summary": "",
+            "venue": "The Oasis, Juhu",
+            "venueUrl": "https://maps.google.com/?q=The+Oasis,+Juhu",
+            "type": "Bachata & Kizomba",
+            "organizers": [
+                {
+                    "name": "Mumbai Latin Dance Community",
+                    "url": "https://www.instagram.com/mumbailatindancecommunity/"
+                }
+            ],
+            "startDateTime": "2026-07-20T21:00:00",
+            "endDateTime": "2026-07-21T01:00:00",
+            "cancelled": false
+        },
+        {
+            "id": "event-8",
+            "title": "Salsa & Bachata Workshop",
+            "summary": "",
+            "venue": "Studio 60, Andheri",
+            "venueUrl": "https://maps.google.com/?q=Studio+60,+Andheri",
+            "type": "Workshop",
+            "organizers": [
+                {
+                    "name": "Salsa India",
+                    "url": "https://www.instagram.com/salsaindia/"
+                }
+            ],
+            "startDateTime": "2026-07-21T19:00:00",
+            "endDateTime": "2026-07-21T21:00:00",
+            "cancelled": false
+        },
+        {
+            "id": "event-9",
+            "title": "Latin Night at The Irish House",
+            "summary": "",
+            "venue": "The Irish House, Bandra",
+            "venueUrl": "https://maps.google.com/?q=The+Irish+House,+Bandra",
+            "type": "Salsa",
+            "organizers": [
+                {
+                    "name": "Latin Nights Mumbai",
+                    "url": "https://www.instagram.com/latinnightsmumbai/"
+                }
+            ],
+            "startDateTime": "2026-07-26T21:00:00",
+            "endDateTime": "2026-07-27T01:00:00",
+            "cancelled": false
+        },
+        {
+            "id": "event-10",
+            "title": "Salsa & Bachata Night",
+            "summary": "",
+            "venue": "The Oasis, Juhu",
+            "venueUrl": "https://maps.google.com/?q=The+Oasis,+Juhu",
+            "type": "Salsa & Bachata",
+            "organizers": [
+                {
+                    "name": "Mumbai Latin Dance Community",
+                    "url": "https://www.instagram.com/mumbailatindancecommunity/"
+                }
+            ],
+            "startDateTime": "2026-07-27T21:00:00",
+            "endDateTime": "2026-07-28T01:00:00",
+            "cancelled": false
+        }
+    ]
+}
