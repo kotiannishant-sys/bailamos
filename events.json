@@ -3,7 +3,7 @@
         {
             "id": "event-1",
             "title": "Salsa Night at Kitty Su",
-            "summary": "",
+            "summary": "Early bird tickets online for ₹800; ₹1,200 at the door.",
             "venue": "Kitty Su, The Lalit Mumbai",
             "venueUrl": "https://maps.google.com/?q=Kitty+Su,+The+Lalit+Mumbai",
             "type": "Salsa",
@@ -22,7 +22,7 @@
         {
             "id": "event-2",
             "title": "Bachata & Kizomba Night",
-            "summary": "",
+            "summary": "Full cover of 500₹ for drinks and food",
             "venue": "The Oasis, Juhu",
             "venueUrl": "https://maps.google.com/?q=The+Oasis,+Juhu",
             "type": "Bachata & Kizomba",
@@ -41,7 +41,7 @@
         {
             "id": "event-3",
             "title": "Salsa & Bachata Workshop",
-            "summary": "",
+            "summary": "One Drink and food included",
             "venue": "Studio 60, Andheri",
             "venueUrl": "https://maps.google.com/?q=Studio+60,+Andheri",
             "type": "Workshop",
@@ -60,7 +60,7 @@
         {
             "id": "event-4",
             "title": "Latin Night at The Irish House",
-            "summary": "",
+            "summary": "The tain is the quickest way to reach",
             "venue": "The Irish House, Bandra",
             "venueUrl": "https://maps.google.com/?q=The+Irish+House,+Bandra",
             "type": "Salsa",
@@ -117,7 +117,7 @@
         {
             "id": "event-7",
             "title": "Bachata & Kizomba Night",
-            "summary": "",
+            "summary": "How long can this thread get it neeeds to be tested the number od words and I can put here and on a screen hasdohad asihasdhoasa",
             "venue": "The Oasis, Juhu",
             "venueUrl": "https://maps.google.com/?q=The+Oasis,+Juhu",
             "type": "Bachata & Kizomba",
@@ -136,7 +136,7 @@
         {
             "id": "event-8",
             "title": "Salsa & Bachata Workshop",
-            "summary": "",
+            "summary": "Pre register on this number only 000000000",
             "venue": "Studio 60, Andheri",
             "venueUrl": "https://maps.google.com/?q=Studio+60,+Andheri",
             "type": "Workshop",
@@ -155,7 +155,7 @@
         {
             "id": "event-9",
             "title": "Latin Night at The Irish House",
-            "summary": "",
+            "summary": "testded",
             "venue": "The Irish House, Bandra",
             "venueUrl": "https://maps.google.com/?q=The+Irish+House,+Bandra",
             "type": "Salsa",
