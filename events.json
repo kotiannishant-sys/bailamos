@@ -7,6 +7,8 @@
             "venue": "Kitty Su, The Lalit Mumbai",
             "venueUrl": "https://maps.google.com/?q=Kitty+Su,+The+Lalit+Mumbai",
             "type": "Salsa",
+            "cost": 800,
+            "currency": "₹",
             "organizers": [
                 {
                     "name": "Latin Nights Mumbai",
@@ -24,6 +26,8 @@
             "venue": "The Oasis, Juhu",
             "venueUrl": "https://maps.google.com/?q=The+Oasis,+Juhu",
             "type": "Bachata & Kizomba",
+            "cost": 500,
+            "currency": "₹",
             "organizers": [
                 {
                     "name": "Mumbai Latin Dance Community",
@@ -41,6 +45,8 @@
             "venue": "Studio 60, Andheri",
             "venueUrl": "https://maps.google.com/?q=Studio+60,+Andheri",
             "type": "Workshop",
+            "cost": 1200,
+            "currency": "₹",
             "organizers": [
                 {
                     "name": "Salsa India",
@@ -58,6 +64,8 @@
             "venue": "The Irish House, Bandra",
             "venueUrl": "https://maps.google.com/?q=The+Irish+House,+Bandra",
             "type": "Salsa",
+            "cost": null,
+            "currency": "₹",
             "organizers": [
                 {
                     "name": "Latin Nights Mumbai",
@@ -75,6 +83,8 @@
             "venue": "The Oasis, Juhu",
             "venueUrl": "https://maps.google.com/?q=The+Oasis,+Juhu",
             "type": "Salsa & Bachata",
+            "cost": 600,
+            "currency": "₹",
             "organizers": [
                 {
                     "name": "Mumbai Latin Dance Community",
@@ -92,6 +102,8 @@
             "venue": "Kitty Su, The Lalit Mumbai",
             "venueUrl": "https://maps.google.com/?q=Kitty+Su,+The+Lalit+Mumbai",
             "type": "Salsa",
+            "cost": 800,
+            "currency": "₹",
             "organizers": [
                 {
                     "name": "Latin Nights Mumbai",
@@ -109,6 +121,8 @@
             "venue": "The Oasis, Juhu",
             "venueUrl": "https://maps.google.com/?q=The+Oasis,+Juhu",
             "type": "Bachata & Kizomba",
+            "cost": 0,
+            "currency": "₹",
             "organizers": [
                 {
                     "name": "Mumbai Latin Dance Community",
@@ -126,6 +140,8 @@
             "venue": "Studio 60, Andheri",
             "venueUrl": "https://maps.google.com/?q=Studio+60,+Andheri",
             "type": "Workshop",
+            "cost": 1500,
+            "currency": "₹",
             "organizers": [
                 {
                     "name": "Salsa India",
@@ -143,6 +159,8 @@
             "venue": "The Irish House, Bandra",
             "venueUrl": "https://maps.google.com/?q=The+Irish+House,+Bandra",
             "type": "Salsa",
+            "cost": null,
+            "currency": "₹",
             "organizers": [
                 {
                     "name": "Latin Nights Mumbai",
@@ -160,6 +178,46 @@
             "venue": "The Oasis, Juhu",
             "venueUrl": "https://maps.google.com/?q=The+Oasis,+Juhu",
             "type": "Salsa & Bachata",
+            "cost": 600,
+            "currency": "₹",
+            "organizers": [
+                {
+                    "name": "Mumbai Latin Dance Community",
+                    "url": "https://www.instagram.com/mumbailatindancecommunity/"
+                }
+            ],
+            "startDateTime": "2026-07-27T21:00:00",
+            "endDateTime": "2026-07-28T01:00:00",
+            "cancelled": false
+        },
+        {
+            "id": "event-11",
+            "title": "Salsa & Bachata Night",
+            "summary": "",
+            "venue": "The Oasis, Juhu",
+            "venueUrl": "https://maps.google.com/?q=The+Oasis,+Juhu",
+            "type": "Salsa & Bachata",
+            "cost": 600,
+            "currency": "₹",
+            "organizers": [
+                {
+                    "name": "Mumbai Latin Dance Community",
+                    "url": "https://www.instagram.com/mumbailatindancecommunity/"
+                }
+            ],
+            "startDateTime": "2026-07-27T21:00:00",
+            "endDateTime": "2026-07-28T01:00:00",
+            "cancelled": false
+        },
+        {
+            "id": "event-12",
+            "title": "Salsa & Bachata Night",
+            "summary": "",
+            "venue": "The Oasis, Juhu",
+            "venueUrl": "https://maps.google.com/?q=The+Oasis,+Juhu",
+            "type": "Salsa & Bachata",
+            "cost": 600,
+            "currency": "₹",
             "organizers": [
                 {
                     "name": "Mumbai Latin Dance Community",

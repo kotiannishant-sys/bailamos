@@ -96,10 +96,77 @@
             backdrop-filter: blur(6px);
         }
 
+        .filter-search-row {
+            display: flex;
+            gap: 10px;
+            align-items: flex-end;
+        }
+
+        .filter-search-row > div:first-child {
+            flex: 1;
+        }
+
+        .toggle-filters-btn {
+            flex-shrink: 0;
+            width: auto;
+            padding: 10px 14px;
+            white-space: nowrap;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .toggle-filters-btn .arrow {
+            display: inline-block;
+            transition: transform 200ms ease;
+            font-style: normal;
+        }
+
+        .toggle-filters-btn.open .arrow {
+            transform: rotate(180deg);
+        }
+
+        .filter-collapsible {
+            display: none;
+            gap: 10px;
+        }
+
+        .filter-collapsible.open {
+            display: grid;
+        }
+
         .filter-grid {
             display: grid;
             gap: 10px;
             grid-template-columns: 1fr;
+        }
+
+        .cost-chip {
+            padding: 4px 8px;
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 600;
+            border: 1px solid;
+            white-space: nowrap;
+        }
+
+        .cost-free {
+            background: #d4f5e2;
+            border-color: #7ed8a4;
+            color: #1a6b40;
+        }
+
+        .cost-paid {
+            background: #fff0d4;
+            border-color: #f0c87e;
+            color: #7a4f00;
+        }
+
+        .cost-unknown {
+            background: var(--chip);
+            border-color: var(--line);
+            color: var(--muted);
         }
 
         label {
@@ -330,12 +397,22 @@
             }
 
             .filter-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
+                grid-template-columns: repeat(3, minmax(0, 1fr));
             }
 
             main {
                 padding: 18px 24px 24px;
             }
+
+            /* On desktop show all filters by default */
+            .filter-collapsible {
+                display: grid !important;
+            }
+
+            .toggle-filters-btn {
+                display: none !important;
+            }
+
         }
 
         @keyframes fadeIn {
@@ -355,53 +432,75 @@
 <body>
     <div class="shell">
         <header class="hero">
-            <span class="kicker"> Schedule </span>
-            <h1> Events Lined Up Ahead</h1>
-            <p class="subtitle"> Read-Only. Contact admin for updates</p>
+            <span class="kicker">Mumbai</span>
+            <h1>Dance Socials Schedule</h1>
+            <p class="subtitle">Dance Socials, Workshops and Classes</p>
         </header>
 
         <section class="filters" aria-label="Event Filters">
-            <div class="filter-grid">
-                <div>
-                    <label for="day-filter">Show Events For</label>
-                    <select id="day-filter">
-                        <option value="7">Next 7 Days</option>
-                        <option value="14">Next 2 Weeks</option>
-                        <option value="21">Next 3 Weeks</option>
-                        <option value="30">Next Month</option>
-                    </select>
-                </div>
-
-                <div>
-                    <label for="venueFilter">Venue</label>
-                    <select id="venueFilter">
-                        <option value="all">All Venues</option>
-                    </select>
-                </div>
-
-                <div>
-                    <label for="typeFilter">Event Type</label>
-                    <select id="typeFilter">
-                        <option value="all">All Types</option>
-                    </select>
-                </div>
-
-                <div>
-                    <label for="organizerFilter">Organizer</label>
-                    <select id="organizerFilter">
-                        <option value="all">All Organizers</option>
-                    </select>
-                </div>
-
+            <!-- Always-visible search row -->
+            <div class="filter-search-row">
                 <div>
                     <label for="search-filter">Search</label>
-                    <input id="search-filter" type="search" placeholder="Search title, summary, organizer">
+                    <input id="search-filter" type="search" placeholder="Search title, venue, organizer…">
                 </div>
+                <button id="toggleFiltersBtn" class="toggle-filters-btn" type="button" aria-expanded="false" aria-controls="filterCollapsible">
+                    Filters <i class="arrow">▾</i>
+                </button>
+            </div>
 
-                <div class="filter_actions">
-                    <button id="clearFiltersBtn" type="button">Clear Filters</button>
+            <!-- Collapsible filter dropdowns (hidden on mobile by default) -->
+            <div id="filterCollapsible" class="filter-collapsible" role="group" aria-label="Advanced filters">
+                <div class="filter-grid">
+                    <div>
+                        <label for="day-filter">Show Events For</label>
+                        <select id="day-filter">
+                            <option value="7">Next 7 Days</option>
+                            <option value="14">Next 2 Weeks</option>
+                            <option value="21">Next 3 Weeks</option>
+                            <option value="30">Next Month</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="venueFilter">Venue</label>
+                        <select id="venueFilter">
+                            <option value="all">All Venues</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="typeFilter">Event Type</label>
+                        <select id="typeFilter">
+                            <option value="all">All Types</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="organizerFilter">Organizer</label>
+                        <select id="organizerFilter">
+                            <option value="all">All Organizers</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="costFilter">Max Cost</label>
+                        <select id="costFilter">
+                            <option value="all">Any Price</option>
+                            <option value="free">Free only</option>
+                            <option value="500">Up to ₹500</option>
+                            <option value="1000">Up to ₹1000</option>
+                            <option value="1500">Up to ₹1500</option>
+                            <option value="unknown">Unknown / TBD</option>
+                        </select>
+                    </div>
+
+                    <div class="filter_actions">
+                        <button id="clearFiltersBtn" type="button">Clear Filters</button>
+                    </div>
                 </div>
             </div>
+
             <div id="summary">Loading upcoming events...</div>
             <div id="activeFilters" class="active-filters" aria-live="polite">Active filters: none</div>
         </section>
@@ -415,12 +514,22 @@
         const venueFilter = document.getElementById("venueFilter");
         const typeFilter = document.getElementById("typeFilter");
         const organizerFilter = document.getElementById("organizerFilter");
+        const costFilter = document.getElementById("costFilter");
         const searchFilter = document.getElementById("search-filter");
         const clearFiltersBtn = document.getElementById("clearFiltersBtn");
+        const toggleFiltersBtn = document.getElementById("toggleFiltersBtn");
+        const filterCollapsible = document.getElementById("filterCollapsible");
         const summary = document.getElementById("summary");
         const activeFilters = document.getElementById("activeFilters");
 
-        const DEFAULT_DAYS_AHEAD = 7;
+        // Toggle filters panel on mobile
+        toggleFiltersBtn.addEventListener("click", () => {
+            const isOpen = filterCollapsible.classList.toggle("open");
+            toggleFiltersBtn.classList.toggle("open", isOpen);
+            toggleFiltersBtn.setAttribute("aria-expanded", String(isOpen));
+        });
+
+        const DEFAULT_DAYS_AHEAD = 30;
         let allEvents = [];
 
         function formatDayTitle(dateObj) {
@@ -540,6 +649,9 @@
             const selectedType = typeFilter.value;
             const selectedOrganizer = organizerFilter.value;
             const selectedTerm = searchFilter.value.trim().toLowerCase();
+            // (selectedCost declared inline below before the filter chain)
+
+            const selectedCost = costFilter.value;
 
             return allEvents
                 .filter(event => eventInWindow(event, selectedDays))
@@ -547,9 +659,16 @@
                 .filter(event => selectedType === "all" || event.type === selectedType)
                 .filter(event => selectedOrganizer === "all" || getOrganizerName(event).some(name => name.toLowerCase() === selectedOrganizer.toLowerCase()))
                 .filter(event => {
+                    if (selectedCost === "all") return true;
+                    if (selectedCost === "unknown") return event.cost === null || event.cost === undefined;
+                    if (selectedCost === "free") return event.cost === 0;
+                    const maxCost = Number(selectedCost);
+                    return typeof event.cost === "number" && event.cost <= maxCost;
+                })
+                .filter(event => {
                     if (!selectedTerm) return true;
 
-                    const searchableText = [event.title, event.summary, ...getOrganizerName(event)]
+                    const searchableText = [event.title, event.summary, event.venue, ...getOrganizerName(event)]
                         .filter(Boolean)
                         .join(" ")
                         .toLowerCase();
@@ -579,6 +698,10 @@
 
             if (organizerFilter.value !== "all") {
                 tokens.push(`Organizer : ${escapeHtml(getSelectedLabel(organizerFilter))}`);
+            }
+
+            if (costFilter.value !== "all") {
+                tokens.push(`Cost : ${escapeHtml(getSelectedLabel(costFilter))}`);
             }
 
             const searchText = searchFilter.value.trim();
@@ -634,6 +757,7 @@
                             <div class="meta-row">
                                 ${renderVenue(event)}
                                 <span class="chip">${eventType}</span>
+                                ${renderCost(event)}
                             </div>
                             ${renderOrganizer(event)}
                             ${eventSummary ? `<p class="summary">${eventSummary}</p>` : ""}
@@ -662,8 +786,20 @@
             venueFilter.value = "all";
             typeFilter.value = "all";
             organizerFilter.value = "all";
+            costFilter.value = "all";
             searchFilter.value = "";
             renderEvents();
+        }
+
+        function renderCost(event) {
+            if (event.cost === null || event.cost === undefined) {
+                return `<span class="cost-chip cost-unknown">Cost TBD</span>`;
+            }
+            if (event.cost === 0) {
+                return `<span class="cost-chip cost-free">Free</span>`;
+            }
+            const symbol = escapeHtml(event.currency || "₹");
+            return `<span class="cost-chip cost-paid">${symbol}${event.cost.toLocaleString()}</span>`;
         }
 
         async function init() {
@@ -686,6 +822,7 @@
                 venueFilter.addEventListener("change", renderEvents);
                 typeFilter.addEventListener("change", renderEvents);
                 organizerFilter.addEventListener("change", renderEvents);
+                costFilter.addEventListener("change", renderEvents);
                 searchFilter.addEventListener("input", renderEvents);
                 clearFiltersBtn.addEventListener("click", clearFilters);
 
