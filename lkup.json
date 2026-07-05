@@ -1,0 +1,94 @@
+{
+  "venues": {
+    "ICONIQA_MIA": {
+      "venue_name": "📍 ICONIQA, Mumbai International Airport",
+      "venue_url": "https://maps.app.goo.gl/1pPtaM5jQgRbSUR87"
+    },
+    "ANTISOCIAL_PL": {
+      "venue_name": "📍 antiSOCIAL, Lower Parel",
+      "venue_url": "https://maps.app.goo.gl/ePZNSr2GrxYd5JaR6"
+    },
+    "145_BA": {
+      "venue_name": "📍 145 Café & Bar, Bandra",
+      "venue_url": "https://maps.app.goo.gl/neVV3nBwetsuFo2f7"
+    },
+    "GLASSHOUSE_MDD": {
+      "venue_name": "📍 Glass House Lounge, Malad",
+      "venue_url": "https://maps.app.goo.gl/1pPtaM5jQgRbSUR87"
+    },
+    "ESCO_BA": {
+      "venue_name": "📍 Escobar, Bandra",
+      "venue_url": "https://maps.app.goo.gl/6k8TkxcqAg7XP7ew9"
+    },
+    "TEST": {
+      "venue_name": "📍 Test",
+      "venue_url": "https://maps.app.goo.gl/1pPtaM5jQgRbSUR87"
+    }
+  },
+  "organizers": {
+    "APDS": {
+      "full_name": "Amrit Pal Dance Singh",
+      "instagram": "https://www.instagram.com/amritpaldancesingh/"
+    },
+    "ROCKODEO": {
+      "full_name": "Rockodeo Dance Nights",
+      "instagram": "https://instagram.com/rockodeodancenights/"
+    },
+    "JUKEBOX": {
+      "full_name": "Jukebox Dance Nights",
+      "instagram": "https://instagram.com/jukeboxdancenights/"
+    },
+    "VVDC": {
+      "full_name": "Valentino Victoria Dance Company (VVDC)",
+      "instagram": "https://instagram.com/v.v.d.c/"
+    },
+    "MLN": {
+      "full_name": "Mumbai Latin Nites",
+      "instagram": "https://instagram.com/mumbai_latin_nites/"
+    },
+    "LT": {
+      "full_name": "Latin Twist",
+      "instagram": "https://instagram.com/latin_twist/"
+    },
+    "CONRI": {
+      "full_name": "Boomerang Nights - Conri",
+      "instagram": "https://instagram.com/conri_boomerang"
+    },
+    "TEST": {
+      "full_name": "Test",
+      "instagram": "https://instagram.com"
+    }
+  },
+  "rules": {
+    "APDS @ ICONIQA_MIA": {
+      "cost": 200,
+      "currency": "₹",
+      "type": "💃 Social : Jive"
+    },
+    "LT @ ANTISOCIAL_PL": {
+      "cost": 500,
+      "currency": "₹",
+      "type": "💃 Social : Salsa | Bachata | Kizomba"
+    },
+    "JUKEBOX @ 145_BA": {
+      "cost": "TBD",
+      "currency": "₹",
+      "type": "💃 Social : Jive"
+    },
+    "ROCKODEO @ 145_BA": {
+      "cost": "TBD",
+      "currency": "₹",
+      "type": "💃 Social : Jive"
+    },
+    "VVDC @ GLASSHOUSE_MDD": {
+      "cost": 400,
+      "currency": "₹",
+      "type": "💃 Social : Jive"
+    },
+    "MLN @ ICONIQA_MIA": {
+      "cost": "TBD",
+      "currency": "₹",
+      "type": "💃 Social : Jive"
+    }
+  }
+}
