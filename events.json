@@ -21,12 +21,12 @@
         },
         {
             "id": "20260711-2000-APDS-ICONIQA_MIA",
-            "title": "Dance Social",
+            "title": "Jive Social",
             "summary": "",
             "venue": "📍 ICONIQA, Mumbai International Airport",
             "venueUrl": "https://maps.app.goo.gl/1pPtaM5jQgRbSUR87",
-            "type": "💃 Social : Dance",
-            "cost": "TBD",
+            "type": "💃 Social : Jive",
+            "cost": 200,
             "currency": "₹",
             "organizers": [
                 {
