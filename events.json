@@ -1,94 +1,56 @@
 {
     "events": [
         {
-            "id": "event-1",
-            "title": "Salsa Night at Kitty Su",
-            "summary": "Early bird tickets online for ₹800; ₹1,200 at the door.",
-            "venue": "Kitty Su, The Lalit Mumbai",
-            "venueUrl": "https://maps.google.com/?q=Kitty+Su,+The+Lalit+Mumbai",
-            "type": "Salsa",
-            "cost": 800,
-            "currency": "₹",
-            "organizers": [
-                {
-                    "name": "Latin Nights Mumbai",
-                    "url": "https://www.instagram.com/latinnightsmumbai/"
-                }
-            ],
-            "startDateTime": "2026-07-04T21:00:00",
-            "endDateTime": "2026-07-05T01:00:00",
-            "cancelled": true
-        },
-        {
-            "id": "event-2",
-            "title": "Bachata & Kizomba Night",
-            "summary": "Full cover of 500₹ for drinks and food",
-            "venue": "The Oasis, Juhu",
-            "venueUrl": "https://maps.google.com/?q=The+Oasis,+Juhu",
-            "type": "Bachata & Kizomba",
-            "cost": 500,
-            "currency": "₹",
-            "organizers": [
-                {
-                    "name": "Mumbai Latin Dance Community",
-                    "url": "https://www.instagram.com/mumbailatindancecommunity/"
-                }
-            ],
-            "startDateTime": "2026-07-06T21:00:00",
-            "endDateTime": "2026-07-07T01:00:00",
-            "cancelled": false
-        },
-        {
-            "id": "event-3",
-            "title": "Salsa & Bachata Workshop",
-            "summary": "One Drink and food included",
-            "venue": "Studio 60, Andheri",
-            "venueUrl": "https://maps.google.com/?q=Studio+60,+Andheri",
-            "type": "Workshop",
-            "cost": 1200,
-            "currency": "₹",
-            "organizers": [
-                {
-                    "name": "Salsa India",
-                    "url": "https://www.instagram.com/salsaindia/"
-                }
-            ],
-            "startDateTime": "2026-07-07T19:00:00",
-            "endDateTime": "2026-07-07T21:00:00",
-            "cancelled": false
-        },
-        {
-            "id": "event-4",
-            "title": "Latin Night at The Irish House",
-            "summary": "The tain is the quickest way to reach",
-            "venue": "The Irish House, Bandra",
-            "venueUrl": "https://maps.google.com/?q=The+Irish+House,+Bandra",
-            "type": "Salsa",
-            "cost": null,
-            "currency": "₹",
-            "organizers": [
-                {
-                    "name": "Latin Nights Mumbai",
-                    "url": "https://www.instagram.com/latinnightsmumbai/"
-                }
-            ],
-            "startDateTime": "2026-07-12T21:00:00",
-            "endDateTime": "2026-07-13T01:00:00",
-            "cancelled": false
-        },
-        {
-            "id": "event-5",
-            "title": "Salsa & Bachata Night",
+            "id": "20260709-2030-VVDC-GLASSHOUSE_MDD",
+            "title": "Jive Social",
             "summary": "",
-            "venue": "The Oasis, Juhu",
-            "venueUrl": "https://maps.google.com/?q=The+Oasis,+Juhu",
-            "type": "Salsa & Bachata",
-            "cost": 600,
+            "venue": "📍 Glass House Lounge, Malad",
+            "venueUrl": "https://maps.app.goo.gl/1pPtaM5jQgRbSUR87",
+            "type": "💃 Social : Jive",
+            "cost": 400,
             "currency": "₹",
             "organizers": [
                 {
-                    "name": "Mumbai Latin Dance Community",
-                    "url": "https://www.instagram.com/mumbailatindancecommunity/"
+                    "name": "Valentino Victoria Dance Company (VVDC)",
+                    "url": "https://instagram.com/v.v.d.c/"
+                }
+            ],
+            "startDateTime": "2026-07-09T20:30:00",
+            "endDateTime": "2026-07-10T01:00:00",
+            "cancelled": false
+        },
+        {
+            "id": "20260711-2000-APDS-ICONIQA_MIA",
+            "title": "Dance Social",
+            "summary": "",
+            "venue": "📍 ICONIQA, Mumbai International Airport",
+            "venueUrl": "https://maps.app.goo.gl/1pPtaM5jQgRbSUR87",
+            "type": "💃 Social : Dance",
+            "cost": "TBD",
+            "currency": "₹",
+            "organizers": [
+                {
+                    "name": "Amrit Pal Dance Singh",
+                    "url": "https://www.instagram.com/amritpaldancesingh/"
+                }
+            ],
+            "startDateTime": "2026-07-11T20:00:00",
+            "endDateTime": "2026-07-12T01:00:00",
+            "cancelled": false
+        },
+        {
+            "id": "20260713-2100-JUKEBOX-145_BA",
+            "title": "Jive Social",
+            "summary": "",
+            "venue": "📍 145 Café & Bar, Bandra",
+            "venueUrl": "https://maps.app.goo.gl/neVV3nBwetsuFo2f7",
+            "type": "💃 Social : Jive",
+            "cost": "TBD",
+            "currency": "₹",
+            "organizers": [
+                {
+                    "name": "Jukebox Dance Nights",
+                    "url": "https://instagram.com/jukeboxdancenights/"
                 }
             ],
             "startDateTime": "2026-07-13T21:00:00",
@@ -96,136 +58,22 @@
             "cancelled": false
         },
         {
-            "id": "event-6",
-            "title": "Salsa Night at Kitty Su",
+            "id": "20260728-2100-ROCKODEO-145_BA",
+            "title": "Jive Social",
             "summary": "",
-            "venue": "Kitty Su, The Lalit Mumbai",
-            "venueUrl": "https://maps.google.com/?q=Kitty+Su,+The+Lalit+Mumbai",
-            "type": "Salsa",
-            "cost": 800,
+            "venue": "📍 145 Café & Bar, Bandra",
+            "venueUrl": "https://maps.app.goo.gl/neVV3nBwetsuFo2f7",
+            "type": "💃 Social : Jive",
+            "cost": "TBD",
             "currency": "₹",
             "organizers": [
                 {
-                    "name": "Latin Nights Mumbai",
-                    "url": "https://www.instagram.com/latinnightsmumbai/"
+                    "name": "Rockodeo Dance Nights",
+                    "url": "https://instagram.com/rockodeodancenights/"
                 }
             ],
-            "startDateTime": "2026-07-19T21:00:00",
-            "endDateTime": "2026-07-20T01:00:00",
-            "cancelled": false
-        },
-        {
-            "id": "event-7",
-            "title": "Bachata & Kizomba Night",
-            "summary": "How long can this thread get it neeeds to be tested the number od words and I can put here and on a screen hasdohad asihasdhoasa",
-            "venue": "The Oasis, Juhu",
-            "venueUrl": "https://maps.google.com/?q=The+Oasis,+Juhu",
-            "type": "Bachata & Kizomba",
-            "cost": 0,
-            "currency": "₹",
-            "organizers": [
-                {
-                    "name": "Mumbai Latin Dance Community",
-                    "url": "https://www.instagram.com/mumbailatindancecommunity/"
-                }
-            ],
-            "startDateTime": "2026-07-20T21:00:00",
-            "endDateTime": "2026-07-21T01:00:00",
-            "cancelled": false
-        },
-        {
-            "id": "event-8",
-            "title": "Salsa & Bachata Workshop",
-            "summary": "Pre register on this number only 000000000",
-            "venue": "Studio 60, Andheri",
-            "venueUrl": "https://maps.google.com/?q=Studio+60,+Andheri",
-            "type": "Workshop",
-            "cost": 1500,
-            "currency": "₹",
-            "organizers": [
-                {
-                    "name": "Salsa India",
-                    "url": "https://www.instagram.com/salsaindia/"
-                }
-            ],
-            "startDateTime": "2026-07-21T19:00:00",
-            "endDateTime": "2026-07-21T21:00:00",
-            "cancelled": false
-        },
-        {
-            "id": "event-9",
-            "title": "Latin Night at The Irish House",
-            "summary": "testded",
-            "venue": "The Irish House, Bandra",
-            "venueUrl": "https://maps.google.com/?q=The+Irish+House,+Bandra",
-            "type": "Salsa",
-            "cost": null,
-            "currency": "₹",
-            "organizers": [
-                {
-                    "name": "Latin Nights Mumbai",
-                    "url": "https://www.instagram.com/latinnightsmumbai/"
-                }
-            ],
-            "startDateTime": "2026-07-26T21:00:00",
-            "endDateTime": "2026-07-27T01:00:00",
-            "cancelled": false
-        },
-        {
-            "id": "event-10",
-            "title": "Salsa & Bachata Night",
-            "summary": "",
-            "venue": "The Oasis, Juhu",
-            "venueUrl": "https://maps.google.com/?q=The+Oasis,+Juhu",
-            "type": "Salsa & Bachata",
-            "cost": 600,
-            "currency": "₹",
-            "organizers": [
-                {
-                    "name": "Mumbai Latin Dance Community",
-                    "url": "https://www.instagram.com/mumbailatindancecommunity/"
-                }
-            ],
-            "startDateTime": "2026-07-27T21:00:00",
-            "endDateTime": "2026-07-28T01:00:00",
-            "cancelled": false
-        },
-        {
-            "id": "event-11",
-            "title": "Salsa & Bachata Night",
-            "summary": "",
-            "venue": "The Oasis, Juhu",
-            "venueUrl": "https://maps.google.com/?q=The+Oasis,+Juhu",
-            "type": "Salsa & Bachata",
-            "cost": 600,
-            "currency": "₹",
-            "organizers": [
-                {
-                    "name": "Mumbai Latin Dance Community",
-                    "url": "https://www.instagram.com/mumbailatindancecommunity/"
-                }
-            ],
-            "startDateTime": "2026-07-27T21:00:00",
-            "endDateTime": "2026-07-28T01:00:00",
-            "cancelled": false
-        },
-        {
-            "id": "event-12",
-            "title": "Salsa & Bachata Night",
-            "summary": "",
-            "venue": "The Oasis, Juhu",
-            "venueUrl": "https://maps.google.com/?q=The+Oasis,+Juhu",
-            "type": "Salsa & Bachata",
-            "cost": 600,
-            "currency": "₹",
-            "organizers": [
-                {
-                    "name": "Mumbai Latin Dance Community",
-                    "url": "https://www.instagram.com/mumbailatindancecommunity/"
-                }
-            ],
-            "startDateTime": "2026-07-27T21:00:00",
-            "endDateTime": "2026-07-28T01:00:00",
+            "startDateTime": "2026-07-28T21:00:00",
+            "endDateTime": "2026-07-29T01:00:00",
             "cancelled": false
         }
     ]
