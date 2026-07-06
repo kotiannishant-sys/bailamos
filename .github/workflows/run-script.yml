@@ -1,0 +1,25 @@
+name: Run Python Script
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:     
+
+jobs:
+  run-python:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repo code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install PyYAML dependency
+        run: pip install PyYAML
+
+      - name: Run script
+        run: python jsonGen.py # Replace with your actual file name
