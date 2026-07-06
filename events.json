@@ -2,7 +2,7 @@
     "events": [
         {
             "id": "20260709-2030-VVDC-GLASSHOUSE_MDD",
-            "title": "Jive Social",
+            "title": "VVDC Jive Social",
             "summary": "",
             "venue": "📍 Glass House Lounge, Malad",
             "venueUrl": "https://maps.app.goo.gl/1pPtaM5jQgRbSUR87",
@@ -21,11 +21,11 @@
         },
         {
             "id": "20260711-2000-APDS-ICONIQA_MIA",
-            "title": "Jive Social",
-            "summary": "Free entry for ladies till 9:30. Full cover",
-            "venue": "📍 ICONIQA, Mumbai International Airport",
+            "title": "Mumbai Latin Nites",
+            "summary": "Free entry for ladies till 9:30PM. Full cover (unlimited appetizer and beer and wine)",
+            "venue": "📍 ICONIQA, Mumbai Airport",
             "venueUrl": "https://maps.app.goo.gl/1pPtaM5jQgRbSUR87",
-            "type": "💃 Social : Jive",
+            "type": "💃 Social : Jive | Bachata | Kizomba",
             "cost": 600,
             "currency": "₹",
             "organizers": [
@@ -39,13 +39,32 @@
             "cancelled": false
         },
         {
+            "id": "20260712-1600-2000-CONRI-ESCO_BA",
+            "title": "Conri Coffee Rave",
+            "summary": "₹300 cover charge",
+            "venue": "📍 Escobar, Bandra",
+            "venueUrl": "https://maps.app.goo.gl/6k8TkxcqAg7XP7ew9",
+            "type": "💃 Social : Bachata | Salsa | Kizomba| Commercial | Afro",
+            "cost": 500,
+            "currency": "₹",
+            "organizers": [
+                {
+                    "name": "Conri Boomerang Nights",
+                    "url": "https://instagram.com/conri_boomerang"
+                }
+            ],
+            "startDateTime": "2026-07-12T16:00:00",
+            "endDateTime": "2026-07-12T20:00:00",
+            "cancelled": false
+        },
+        {
             "id": "20260713-2100-JUKEBOX-145_BA",
-            "title": "Jive Social",
+            "title": "Jukebox Dance Nights",
             "summary": "",
             "venue": "📍 145 Café & Bar, Bandra",
             "venueUrl": "https://maps.app.goo.gl/neVV3nBwetsuFo2f7",
             "type": "💃 Social : Jive",
-            "cost": "TBD",
+            "cost": "undefined",
             "currency": "₹",
             "organizers": [
                 {
@@ -59,12 +78,12 @@
         },
         {
             "id": "20260728-2100-ROCKODEO-145_BA",
-            "title": "Jive Social",
+            "title": "Rockodeo Dance Nights",
             "summary": "",
             "venue": "📍 145 Café & Bar, Bandra",
             "venueUrl": "https://maps.app.goo.gl/neVV3nBwetsuFo2f7",
             "type": "💃 Social : Jive",
-            "cost": "TBD",
+            "cost": "undefined",
             "currency": "₹",
             "organizers": [
                 {

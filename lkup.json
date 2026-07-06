@@ -1,7 +1,7 @@
 {
   "venues": {
     "ICONIQA_MIA": {
-      "venue_name": "📍 ICONIQA, Mumbai International Airport",
+      "venue_name": "📍 ICONIQA, Mumbai Airport",
       "venue_url": "https://maps.app.goo.gl/1pPtaM5jQgRbSUR87"
     },
     "ANTISOCIAL_PL": {
@@ -51,7 +51,7 @@
       "instagram": "https://instagram.com/latin_twist/"
     },
     "CONRI": {
-      "full_name": "Boomerang Nights - Conri",
+      "full_name": "Conri Boomerang Nights",
       "instagram": "https://instagram.com/conri_boomerang"
     },
     "TEST": {
@@ -61,34 +61,60 @@
   },
   "rules": {
     "APDS @ ICONIQA_MIA": {
-      "cost": 200,
+      "title": "Mumbai Latin Nites",
+      "cost": 600,
       "currency": "₹",
-      "type": "💃 Social : Jive"
+      "type": "💃 Social : Jive | Bachata | Kizomba",
+      "summary": "Free entry for ladies till 9:30PM. Full cover (unlimited appetizer and beer and wine)"
     },
     "LT @ ANTISOCIAL_PL": {
+      "title": "Latin Twist",
       "cost": 500,
       "currency": "₹",
-      "type": "💃 Social : Salsa | Bachata | Kizomba"
+      "type": "💃 Social : Salsa | Bachata | Kizomba",
+      "summary": ""
     },
     "JUKEBOX @ 145_BA": {
-      "cost": "TBD",
+      "title": "Jukebox Dance Nights",
+      "cost": "undefined",
       "currency": "₹",
-      "type": "💃 Social : Jive"
+      "type": "💃 Social : Jive",
+      "summary": ""
     },
     "ROCKODEO @ 145_BA": {
-      "cost": "TBD",
+      "title": "Rockodeo Dance Nights",
+      "cost": "undefined",
       "currency": "₹",
-      "type": "💃 Social : Jive"
+      "type": "💃 Social : Jive",
+      "summary": ""
     },
     "VVDC @ GLASSHOUSE_MDD": {
+      "title": "VVDC Jive Social",
       "cost": 400,
       "currency": "₹",
-      "type": "💃 Social : Jive"
+      "type": "💃 Social : Jive",
+      "summary": ""
     },
     "MLN @ ICONIQA_MIA": {
-      "cost": "TBD",
+      "title": "Mumbai Latin Nites",
+      "cost": "null",
       "currency": "₹",
-      "type": "💃 Social : Jive"
+      "type": "💃 Social : Jive",
+      "summary": ""
+    },
+    "CONRI @ ESCO_BA # CRAVE": {
+      "title": "Conri Coffee Rave",
+      "cost": 500,
+      "currency": "₹",
+      "type": "💃 Social : Bachata | Salsa | Kizomba| Commercial | Afro",
+      "summary": "₹300 cover charge"
+    },
+    "CONRI @ ESCO_BA": {
+      "title": "Conri Boomerang Nights",
+      "cost": 400,
+      "currency": "₹",
+      "type": "💃 Social : Jive",
+      "summary": "₹300 cover charge"
     }
   }
 }

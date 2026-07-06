@@ -1,13 +1,23 @@
 import json
 from datetime import datetime, timedelta
 from pathlib import Path
+import yaml
 
 
-def generate_dance_events(id_list):
-    id_list = list(dict.fromkeys(id_list)) #remove duplicates
+def generate_dance_events():
     current_dir = Path(__file__).parent
+    input_path = current_dir / "input.yaml"
     lookup_path = current_dir / "lkup.json"
-    output_path = current_dir / "output.json"
+    output_path = current_dir / "events.json"
+
+    # Read yaml
+    with open(input_path, 'r', encoding='utf-8') as file:
+        yaml_data = yaml.safe_load(file)
+    
+    # Extract the target list array from the dictionary layout
+    id_list = yaml_data.get("input_ids", [])
+    id_list = list(dict.fromkeys(id_list)) #remove duplicates
+
 
     if not lookup_path.exists():
         print(f"Error: Could not find 'lookup.json' in {current_dir}")
@@ -17,8 +27,14 @@ def generate_dance_events(id_list):
         lookup = json.load(f)
 
     output_events = []
+    tag=None
 
     for event_id in id_list:
+
+        # check for any tags which represent deviation from stadrad events
+        if "#" in event_id: 
+            event_id, tag = event_id.split("#")
+
         parts = event_id.split("-")
 
         # Handle 5 parts: [DATE, START, END, ORG, VENUE]
@@ -60,16 +76,21 @@ def generate_dance_events(id_list):
         # Lookups
         venue_info = lookup.get("venues", {}).get(venue_key, {})
         org_info = lookup.get("organizers", {}).get(org_key, {})
-        rule_key = f"{org_key} @ {venue_key}"
-        rule_info = lookup.get("rules", {}).get(rule_key, {})
 
+        if tag:
+            rule_key = f"{org_key} @ {venue_key} # {tag}" # speacial tag
+        else:
+            rule_key = f"{org_key} @ {venue_key}"
+        tag=None
+
+        rule_info = lookup.get("rules", {}).get(rule_key, {})
         event_type = rule_info.get("type", "💃 Social : Dance")
-        title = event_type.replace("💃 Social : ", "") + " Social"
+        title = rule_info.get("title", event_type.replace("💃 Social : ", "") + " Social")
 
         event_payload = {
             "id": event_id,
             "title": title,
-            "summary": "",
+            "summary": rule_info.get("summary", ""),
             "venue": venue_info.get("venue_name", f"📍 {venue_key}"),
             "venueUrl": venue_info.get("venue_url", ""),
             "type": event_type,
@@ -97,15 +118,4 @@ def generate_dance_events(id_list):
 
 
 if __name__ == "__main__":
-    # Testing both formats (with and without end time)
-    input_ids = [
-        "20260709-2030-VVDC-GLASSHOUSE_MDD",
-        "20260711-2000-APDS-ICONIQA_MIA", 
-        "20260713-2100-JUKEBOX-145_BA",
-        "20260728-2100-ROCKODEO-145_BA",
-    ]
-    generate_dance_events(input_ids)
-
-#"20260711-2000-0230-APDS-IconiqaMIA",  # Custom end time (2:30 AM next day)
-#"20260711-2000-APDS-IconiqaMIA",  # Fallback rule (1:00 AM next day)
-#"20260712-2030-2330-APDS-IconiqaMIA",
+    generate_dance_events()
