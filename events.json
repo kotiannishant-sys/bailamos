@@ -96,6 +96,25 @@
             "cancelled": false
         },
         {
+            "id": "20260712-1900-2300-DPLANET-OPULENT_ADH",
+            "title": "Jive Social",
+            "summary": "₹500 pre registration. ₹300 cover",
+            "venue": "📍 Opulent Banquet, Andheri",
+            "venueUrl": "https://maps.app.goo.gl/nNSWYXoQBaq5TqZw8",
+            "type": "💃 Social : Jive",
+            "cost": 600,
+            "currency": "₹",
+            "organizers": [
+                {
+                    "name": "Dance Planet",
+                    "url": "https://instagram.com/danceplanet_mumbai/"
+                }
+            ],
+            "startDateTime": "2026-07-12T19:00:00",
+            "endDateTime": "2026-07-12T23:00:00",
+            "cancelled": false
+        },
+        {
             "id": "20260712-2030-LDS-TAP_WORLI",
             "title": "Latin Delight Socials",
             "summary": "",
