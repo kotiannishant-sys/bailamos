@@ -20,6 +20,25 @@
             "cancelled": false
         },
         {
+            "id": "20260708-2030-LT-MIRAGE_STC",
+            "title": "Latin Twsit Socials",
+            "summary": "",
+            "venue": "📍 Mirage, Santacruz",
+            "venueUrl": "https://maps.app.goo.gl/bEoEYNkQtjSJXGHi8",
+            "type": "💃 Social : Salsa | Bachata | Kizomba",
+            "cost": 400,
+            "currency": "₹",
+            "organizers": [
+                {
+                    "name": "Latin Twist",
+                    "url": "https://instagram.com/latin_twist/"
+                }
+            ],
+            "startDateTime": "2026-07-08T20:30:00",
+            "endDateTime": "2026-07-09T01:00:00",
+            "cancelled": false
+        },
+        {
             "id": "20260709-2030-VVDC-GLASSHOUSE_MDD",
             "title": "VVDC Jive Social",
             "summary": "",
@@ -74,6 +93,25 @@
             ],
             "startDateTime": "2026-07-12T16:00:00",
             "endDateTime": "2026-07-12T20:00:00",
+            "cancelled": false
+        },
+        {
+            "id": "20260712-2030-LDS-TAP_WORLI",
+            "title": "Latin Delight Socials",
+            "summary": "",
+            "venue": "📍 TAP Resto Bar, Worli",
+            "venueUrl": "https://maps.app.goo.gl/kND3i9HkFeCRwjYx8",
+            "type": "💃 Social : Salsa | Bachata | Kizomba| Jive",
+            "cost": 600,
+            "currency": "₹",
+            "organizers": [
+                {
+                    "name": "Latin Delight Socials",
+                    "url": "https://instagram.com/latindelightsocials/"
+                }
+            ],
+            "startDateTime": "2026-07-12T20:30:00",
+            "endDateTime": "2026-07-13T01:00:00",
             "cancelled": false
         },
         {
