@@ -28,6 +28,10 @@
       "venue_name": "📍 TAP Resto Bar, Worli",
       "venue_url": "https://maps.app.goo.gl/kND3i9HkFeCRwjYx8"
     },
+    "OPULENT_ADH": {
+      "venue_name": "📍 Opulent Banquet, Andheri",
+      "venue_url": "https://maps.app.goo.gl/nNSWYXoQBaq5TqZw8"
+    },
     "TEST": {
       "venue_name": "📍 Test",
       "venue_url": "https://maps.app.goo.gl/1pPtaM5jQgRbSUR87"
@@ -65,6 +69,10 @@
     "LDS": {
       "full_name": "Latin Delight Socials",
       "instagram": "https://instagram.com/latindelightsocials/"
+    },
+    "DPLANET": {
+      "full_name": "Dance Planet",
+      "instagram": "https://instagram.com/danceplanet_mumbai/"
     },
     "TEST": {
       "full_name": "Test",
@@ -141,6 +149,13 @@
       "currency": "₹",
       "type": "💃 Social : Salsa | Bachata | Kizomba| Jive",
       "summary": ""
+    },
+    "DPLANET @ OPULENT_ADH": {
+      "title": "Jive Social",
+      "cost": 600,
+      "currency": "₹",
+      "type": "💃 Social : Jive",
+      "summary": "₹500 pre registration. ₹300 cover"
     }
   }
 }
