@@ -1,6 +1,25 @@
 {
     "events": [
         {
+            "id": "20260707-2100-CONRI-ESCO_BA",
+            "title": "Conri Boomerang Nights",
+            "summary": "₹300 cover charge",
+            "venue": "📍 Escobar, Bandra",
+            "venueUrl": "https://maps.app.goo.gl/6k8TkxcqAg7XP7ew9",
+            "type": "💃 Social : Jive",
+            "cost": 400,
+            "currency": "₹",
+            "organizers": [
+                {
+                    "name": "Conri Boomerang Nights",
+                    "url": "https://instagram.com/conri_boomerang"
+                }
+            ],
+            "startDateTime": "2026-07-07T21:00:00",
+            "endDateTime": "2026-07-08T01:00:00",
+            "cancelled": false
+        },
+        {
             "id": "20260709-2030-VVDC-GLASSHOUSE_MDD",
             "title": "VVDC Jive Social",
             "summary": "",
