@@ -20,6 +20,14 @@
       "venue_name": "📍 Escobar, Bandra",
       "venue_url": "https://maps.app.goo.gl/6k8TkxcqAg7XP7ew9"
     },
+    "MIRAGE_STC": {
+      "venue_name": "📍 Mirage, Santacruz",
+      "venue_url": "https://maps.app.goo.gl/bEoEYNkQtjSJXGHi8"
+    },
+    "TAP_WORLI": {
+      "venue_name": "📍 TAP Resto Bar, Worli",
+      "venue_url": "https://maps.app.goo.gl/kND3i9HkFeCRwjYx8"
+    },
     "TEST": {
       "venue_name": "📍 Test",
       "venue_url": "https://maps.app.goo.gl/1pPtaM5jQgRbSUR87"
@@ -52,7 +60,11 @@
     },
     "CONRI": {
       "full_name": "Conri Boomerang Nights",
-      "instagram": "https://instagram.com/conri_boomerang"
+      "instagram": "https://instagram.com/conri_boomerang/"
+    },
+    "LDS": {
+      "full_name": "Latin Delight Socials",
+      "instagram": "https://instagram.com/latindelightsocials/"
     },
     "TEST": {
       "full_name": "Test",
@@ -115,6 +127,20 @@
       "currency": "₹",
       "type": "💃 Social : Bachata | Salsa | Kizomba",
       "summary": "₹300 cover charge"
+    },
+    "LT @ MIRAGE_STC": {
+      "title": "Latin Twsit Socials",
+      "cost": 400,
+      "currency": "₹",
+      "type": "💃 Social : Salsa | Bachata | Kizomba",
+      "summary": ""
+    },
+    "LDS @ TAP_WORLI": {
+      "title": "Latin Delight Socials",
+      "cost": 600,
+      "currency": "₹",
+      "type": "💃 Social : Salsa | Bachata | Kizomba| Jive",
+      "summary": ""
     }
   }
 }
