@@ -1,25 +1,6 @@
 {
     "events": [
         {
-            "id": "20260707-2100-CONRI-ESCO_BA",
-            "title": "Conri Boomerang Nights",
-            "summary": "₹300 cover charge",
-            "venue": "📍 Escobar, Bandra",
-            "venueUrl": "https://maps.app.goo.gl/6k8TkxcqAg7XP7ew9",
-            "type": "💃 Social : Bachata | Salsa | Kizomba",
-            "cost": 400,
-            "currency": "₹",
-            "organizers": [
-                {
-                    "name": "Conri Boomerang Nights",
-                    "url": "https://instagram.com/conri_boomerang/"
-                }
-            ],
-            "startDateTime": "2026-07-07T21:00:00",
-            "endDateTime": "2026-07-08T01:00:00",
-            "cancelled": false
-        },
-        {
             "id": "20260708-2030-LT-MIRAGE_STC",
             "title": "Latin Twsit Socials",
             "summary": "",
@@ -150,6 +131,25 @@
             ],
             "startDateTime": "2026-07-13T21:00:00",
             "endDateTime": "2026-07-14T01:00:00",
+            "cancelled": false
+        },
+        {
+            "id": "20260714-2100-CONRI-ESCO_BA",
+            "title": "Conri Boomerang Nights",
+            "summary": "₹300 cover charge",
+            "venue": "📍 Escobar, Bandra",
+            "venueUrl": "https://maps.app.goo.gl/6k8TkxcqAg7XP7ew9",
+            "type": "💃 Social : Bachata | Salsa | Kizomba",
+            "cost": 400,
+            "currency": "₹",
+            "organizers": [
+                {
+                    "name": "Conri Boomerang Nights",
+                    "url": "https://instagram.com/conri_boomerang/"
+                }
+            ],
+            "startDateTime": "2026-07-14T21:00:00",
+            "endDateTime": "2026-07-15T01:00:00",
             "cancelled": false
         },
         {
