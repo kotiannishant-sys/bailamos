@@ -1516,24 +1516,24 @@ body.menu-is-open {
 
 .detail-row a,
 .organizer-link {
-  color: var(--color-text);
-  text-decoration: underline;
-  text-decoration-color: var(--color-brass-soft);
-  text-underline-offset: 3px;
+  color: var(--color-text-muted);
+  font-weight: 400;
+  text-decoration: none;
 }
 
 .detail-row a:hover,
 .detail-row a:focus-visible,
 .organizer-link:hover,
 .organizer-link:focus-visible {
-  color: var(--color-ember-hover);
-  text-decoration-color: var(--color-ember-hover);
+  color: #ffffff;
+  font-weight: 400;
+  text-decoration: none;
 }
 
 .detail-row a i,
 .organizer-link i {
   margin-left: 3px;
-  color: var(--color-brass);
+  color: var(--color-text-faint);
   font-size: 13px;
 }
 
@@ -1545,7 +1545,7 @@ body.menu-is-open {
 
 .organizer-link {
   width: fit-content;
-  color: var(--color-text);
+  color: var(--color-text-muted);
   font-size: 15px;
 }
 
@@ -1555,106 +1555,68 @@ body.menu-is-open {
 
 .detail-actions {
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
   gap: 10px;
   margin-top: 22px;
 }
 
+.detail-actions .action-button,
 .primary-action,
 .secondary-action {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 7px;
+  gap: 8px;
   width: 100%;
-  min-height: 44px;
+  min-height: 42px;
+  padding: 0 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--color-separator);
   border-radius: var(--radius-action);
-  font-weight: 600;
+  color: var(--color-text-muted);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 400;
   text-decoration: none;
-  transition: background-color var(--motion-standard), border-color var(--motion-standard), color var(--motion-standard), transform var(--motion-standard), box-shadow var(--motion-standard);
+  text-align: center;
+  transition: background-color var(--motion-standard), border-color var(--motion-standard), color var(--motion-standard), transform var(--motion-standard);
 }
 
-.primary-action {
-  background: linear-gradient(135deg, #ff2a85 0%, #d90429 100%);
-  color: #ffffff;
-  box-shadow: 0 4px 20px rgba(255, 42, 133, 0.4);
-}
-
+.detail-actions .action-button:hover,
+.detail-actions .action-button:focus-visible,
 .primary-action:hover,
-.primary-action:focus-visible {
-  background: linear-gradient(135deg, #ff4797 0%, #f01438 100%);
-  box-shadow: 0 6px 26px rgba(255, 42, 133, 0.6);
+.secondary-action:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--color-text-faint);
   color: #ffffff;
+  text-decoration: none;
 }
 
-.primary-action:active {
-  transform: scale(0.96) translateY(1px);
-}
-
-.secondary-action {
-  justify-content: flex-start;
-  background: rgba(18, 15, 26, 0.7);
-  border: 1px solid rgba(0, 240, 255, 0.4);
-  color: var(--color-neon-blue);
-  padding: 0 16px;
-}
-
-.secondary-action:hover,
-.secondary-action:focus-visible {
-  background: rgba(0, 240, 255, 0.12);
-  border-color: var(--color-neon-blue);
-  color: #ffffff;
-  box-shadow: 0 0 16px rgba(0, 240, 255, 0.35);
-}
-
+.detail-actions .action-button:active,
+.primary-action:active,
 .secondary-action:active {
-  transform: scale(0.96) translateY(1px);
+  transform: scale(0.97) translateY(1px);
 }
 
+.detail-actions .action-button i,
 .primary-action i,
 .secondary-action i {
   font-size: 16px;
-}
-
-.secondary-action {
-  justify-content: flex-start;
+  color: var(--color-text-muted);
 }
 
 .detail-banner {
-  margin-bottom: 22px;
-  border-bottom: 1px solid var(--color-separator);
-}
-
-.detail-banner summary {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 38px;
-  color: var(--color-text-muted);
-  cursor: pointer;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  list-style: none;
-}
-
-.detail-banner summary::-webkit-details-marker {
-  display: none;
-}
-
-.detail-banner summary i {
-  color: var(--color-brass);
-  transition: transform var(--motion-standard);
-}
-
-.detail-banner[open] summary i {
-  transform: rotate(180deg);
+  margin-bottom: 20px;
+  border-radius: var(--radius-action);
+  overflow: hidden;
+  border: 1px solid var(--color-separator-soft);
 }
 
 .detail-banner img {
   display: block;
   width: 100%;
-  max-height: 280px;
+  max-height: 320px;
   object-fit: cover;
-  border-top: 1px solid var(--color-separator-soft);
 }
 
 .drawer-layer,

@@ -641,11 +641,22 @@ function renderTimeline() {
     .join('');
 }
 
-function renderInfoRow(label, value) {
+const DETAIL_ICONS = {
+  time: `<svg class="detail-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>`,
+  venue: `<svg class="detail-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>`,
+  styles: `<svg class="detail-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>`,
+  price: `<svg class="detail-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2"/><path d="M13 11v2"/><path d="M13 17v2"/></svg>`,
+  theme: `<svg class="detail-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg>`,
+};
+
+function renderInfoRow(iconSvg, label, value) {
   if (!value) return '';
   return `
     <div class="detail-row">
-      <dt>${escapeHtml(label)}</dt>
+      <dt title="${escapeHtml(label)}">
+        ${iconSvg}
+        <span class="sr-only">${escapeHtml(label)}</span>
+      </dt>
       <dd>${value}</dd>
     </div>
   `;
@@ -665,18 +676,15 @@ function renderDetailPanel(event, mode) {
 
   return `
     <div class="detail-panel-shell${isDrawer && appState.drawerExpanded ? ' is-expanded' : ''}">
-      ${isDrawer ? '<button class="drawer-handle" type="button" data-action="toggle-drawer" aria-label="Expand event details"><span></span></button>' : ''}
       <div class="detail-topbar">
         <button class="detail-close" type="button" data-action="close-details" aria-label="Close event details"><i class="ti ti-x" aria-hidden="true"></i></button>
         <span class="detail-topline">${escapeHtml(formatFullDate(event.startDate))} · ${escapeHtml(formatTimeRange(event))}</span>
-        <span class="detail-type">${escapeHtml(event.event_type || 'Event')}</span>
       </div>
       <div class="detail-scroll">
         ${bannerUrl ? `
-          <details class="detail-banner" open>
-            <summary>View event poster <i class="ti ti-chevron-down" aria-hidden="true"></i></summary>
+          <div class="detail-banner">
             <img src="${escapeHtml(bannerUrl)}" alt="${escapeHtml(event.title)} event poster" loading="lazy" />
-          </details>
+          </div>
         ` : ''}
         <div class="detail-heading-block">
           <div class="detail-status-line">
@@ -687,15 +695,15 @@ function renderDetailPanel(event, mode) {
           ${event.summary ? `<p class="detail-summary">${escapeHtml(event.summary)}</p>` : ''}
         </div>
         <dl class="detail-list">
-          ${renderInfoRow('Time', `<span class="mono-value">${escapeHtml(formatTimeRange(event))}</span>`)}
-          ${renderInfoRow('Venue', event.venue
+          ${renderInfoRow(DETAIL_ICONS.time, 'Time', `<span class="mono-value">${escapeHtml(formatTimeRange(event))}</span>`)}
+          ${renderInfoRow(DETAIL_ICONS.venue, 'Venue', event.venue
             ? venueUrl
               ? `<a href="${escapeHtml(venueUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(event.venue)} <i class="ti ti-external-link" aria-hidden="true"></i><span class="sr-only">${externalLabel}</span></a>`
               : escapeHtml(event.venue)
             : '')}
-          ${renderInfoRow('Styles', escapeHtml(styles))}
-          ${renderInfoRow('Price', cost ? `<span class="mono-value">${cost}</span>` : '')}
-          ${renderInfoRow('Theme', event.theme ? escapeHtml(event.theme) : '')}
+          ${renderInfoRow(DETAIL_ICONS.styles, 'Styles', escapeHtml(styles))}
+          ${renderInfoRow(DETAIL_ICONS.price, 'Price', cost ? `<span class="mono-value">${cost}</span>` : '')}
+          ${renderInfoRow(DETAIL_ICONS.theme, 'Theme', event.theme ? escapeHtml(event.theme) : '')}
         </dl>
         ${event.organizer_name ? `
           <div class="organizer-block">
@@ -707,8 +715,8 @@ function renderDetailPanel(event, mode) {
         ` : ''}
         ${(venueUrl || postUrl) ? `
           <div class="detail-actions">
-            ${venueUrl ? `<a class="solid-action primary-action" href="${escapeHtml(venueUrl)}" target="_blank" rel="noopener noreferrer"><i class="ti ti-map-pin" aria-hidden="true"></i>Open in Maps<span class="sr-only">${externalLabel}</span></a>` : ''}
-            ${postUrl ? `<a class="text-action secondary-action" href="${escapeHtml(postUrl)}" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-instagram" aria-hidden="true"></i>View Instagram post<span class="sr-only">${externalLabel}</span></a>` : ''}
+            ${venueUrl ? `<a class="action-button" href="${escapeHtml(venueUrl)}" target="_blank" rel="noopener noreferrer"><i class="ti ti-map-pin" aria-hidden="true"></i>Maps<span class="sr-only">${externalLabel}</span></a>` : ''}
+            ${postUrl ? `<a class="action-button" href="${escapeHtml(postUrl)}" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-instagram" aria-hidden="true"></i>Instagram post<span class="sr-only">${externalLabel}</span></a>` : ''}
           </div>
         ` : ''}
       </div>
