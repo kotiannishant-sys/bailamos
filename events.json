@@ -1,270 +1,175 @@
 {
-  "events": [
-    {
-      "title": "Latin Twist Wednesdays",
-      "summary": "Bachata Workshop by Mary Lobo followed by a Latin Social with DJ Cza. Entry options: Workshop + Social ₹400, Couple Workshop + Social ₹600 (Online Only), Social Only ₹500 cover.",
-      "venue": "Belmarose, Vile Parle",
-      "event_type": "Social",
-      "dance_styles": "Salsa • Bachata • Kizomba",
-      "cost": "400-600",
-      "currency": "₹",
-      "organizer_name": "Latin Twist",
-      "start_date_time": "2026-09-02T20:30:00",
-      "end_date_time": "2026-09-03T01:00:00",
-      "theme": "Smart Casual / Club Chic",
-      "cancelled": false,
-      "post_url": "https://www.instagram.com/p/Dcns2EVJLi3",
-      "banner_url": "",
-      "owner_username": "latin_twist",
-      "venue_url": "https://www.google.com/maps/search/?api=1&query=Belmarose+Hotel+Sahara+Star+Vile+Parle+Mumbai",
-      "organizer_url": "https://instagram.com/latin_twist/",
-      "id": "20260902-2030-LATIN_TWIST-BELMAROSEH",
-      "created_at": "2026-08-29T17:05:17"
-    },
-    {
-      "title": "Twisting Thursdays",
-      "summary": "Join us for a fun evening of dancing to your favorite jive songs. Includes a complimentary Cha Cha beginner lesson.",
-      "venue": "Mia Cuccina, Bandra West",
-      "event_type": "Social",
-      "dance_styles": "Jive • Cha Cha",
-      "cost": 600,
-      "currency": "₹",
-      "organizer_name": "Marlon Almeida",
-      "start_date_time": "2026-09-03T20:15:00",
-      "end_date_time": "2026-09-03T23:59:59",
-      "theme": null,
-      "cancelled": false,
-      "banner_url": "",
-      "venue_url": "https://www.google.com/maps/search/?api=1&query=Mia+Cuccina+Bandra+West",
-      "organizer_url": "https://instagram.com/marlonalmeida77/",
-      "id": "20260903-2015-MARLONALMEIDA77-MIACUCCINA",
-      "post_url": "",
-      "created_at": "2026-09-02T00:13:30"
-    },
-    {
-      "title": "Afro Latin Socials",
-      "summary": "₹300 Cover charge, Free entry for ladies till 10:30 PM",
-      "venue": "Millar House, Khar",
-      "venue_url": "https://www.google.com/maps/search/?api=1&query=Millar+House+Khar",
-      "event_type": "Social",
-      "dance_styles": "Bachata • Kizomba • Salsa",
-      "cost": 400,
-      "currency": "₹",
-      "organizer_name": "Afro Latin Socials Mumbai",
-      "organizer_url": "https://instagram.com/afrolatinsocialsmumbai/",
-      "start_date_time": "2026-09-03T21:30:00",
-      "end_date_time": "2026-09-04T01:00:00",
-      "cancelled": false,
-      "theme": null,
-      "post_url": "",
-      "banner_url": "",
-      "id": "20260903-2130-AFROLATINSOCIALSMUMBAI-MILLARHOUSE_KHAR#THURSDAY",
-      "created_at": "2026-08-28T11:02:20"
-    },
-    {
-      "title": "Latin Groove Lab Social | LGL Conexión",
-      "summary": "Cover charge is fully redeemable.",
-      "venue": "Kojak, Juhu",
-      "venue_url": "https://www.google.com/maps/search/?api=1&query=Kojak+Juhu",
-      "event_type": "Social",
-      "dance_styles": "Bachata • Kizomba",
-      "cost": 300,
-      "currency": "₹",
-      "organizer_name": "Latin Groove Lab",
-      "organizer_url": "https://instagram.com/latingroovelab/",
-      "start_date_time": "2026-09-03T22:00:00",
-      "end_date_time": "2026-09-04T01:00:00",
-      "cancelled": false,
-      "theme": null,
-      "post_url": "",
-      "banner_url": "",
-      "id": "20260903-2200-LATINGROOVELAB-KOJAK_VLP#THURSDAY",
-      "created_at": "2026-08-28T11:02:20"
-    },
-    {
-      "title": "Kizomba Kulture Social",
-      "summary": "Includes 45 minutes of Tarraxinha at the start. Pre-registration is compulsory.",
-      "venue": "GLU STUDIOS, Khar",
-      "event_type": "Social",
-      "dance_styles": "Kizomba • Tarraxinha",
-      "cost": 350,
-      "currency": "₹",
-      "organizer_name": "Kizomba Kulture",
-      "start_date_time": "2026-09-05T22:00:00",
-      "end_date_time": "2026-09-06T00:30:00",
-      "theme": null,
-      "cancelled": false,
-      "post_url": "https://www.instagram.com/reel/DcRFxXLiC_w",
-      "banner_url": "",
-      "owner_username": "kizombakulture",
-      "venue_url": "https://www.google.com/maps/search/?api=1&query=GLU+STUDIOS+Khar",
-      "organizer_url": "https://instagram.com/kizombakulture/",
-      "id": "20260905-2200-KIZOMBAKULTURE-GLU_KHAR",
-      "created_at": "2026-08-25T21:15:53"
-    },
-    {
-      "title": "Sunday Sundowner",
-      "summary": "₹400 cover charge",
-      "venue": "BaaMee, Andheri",
-      "venue_url": "https://www.google.com/maps/search/?api=1&query=Baa+Mee+All+Day+Eatery+Bar+Andheri+West",
-      "event_type": "Social",
-      "dance_styles": "Salsa • Bachata • Kizomba • Jive",
-      "cost": 500,
-      "currency": "₹",
-      "organizer_name": "Good Vibes Events",
-      "organizer_url": "https://instagram.com/good_vibes_events_mumbai/",
-      "start_date_time": "2026-09-06T17:00:00",
-      "end_date_time": "2026-09-06T21:00:00",
-      "cancelled": false,
-      "theme": null,
-      "post_url": "https://instagram.com/good_vibes_events_mumbai/",
-      "banner_url": "",
-      "id": "20260906-1700-GOOD_VIBES_EVENTS_MUMBAI-BAAMEE_ADH#SUNDAY",
-      "created_at": "2026-08-31T00:12:08"
-    },
-    {
-      "title": "Sunday Latin Nights",
-      "summary": "Includes ₹300 cover",
-      "venue": "TAP Resto Bar, Worli",
-      "venue_url": "https://www.google.com/maps/search/?api=1&query=TAP+Resto+Bar+Worli",
-      "event_type": "Social",
-      "dance_styles": "Salsa • Bachata • Kizomba • Jive",
-      "cost": 500,
-      "currency": "₹",
-      "organizer_name": "Latin Delight Socials",
-      "organizer_url": "https://instagram.com/latindelightsocials/",
-      "start_date_time": "2026-09-06T21:00:00",
-      "end_date_time": "2026-09-07T01:00:00",
-      "cancelled": false,
-      "theme": null,
-      "post_url": "https://instagram.com/latindelightsocials/",
-      "banner_url": "",
-      "id": "20260906-2100-LATINDELIGHTSOCIALS-TAP_WORLI#SUNDAY_#_EVERY_2_WEEKS_#_2026-08-23",
-      "created_at": "2026-08-31T00:12:08"
-    },
-    {
-      "title": "Khar Social Party",
-      "summary": "Includes a complimentary workshop by DD Squad, 1 hour of Salsa Romantica special, and social dancing with Salsa & Bachata music.",
-      "venue": "Khar SOCIAL",
-      "event_type": "Social",
-      "dance_styles": "Salsa • Bachata",
-      "cost": "Contact Host",
-      "currency": "₹",
-      "organizer_name": "Dance Design",
-      "start_date_time": "2026-09-07T21:00:00",
-      "end_date_time": "2026-09-08T00:00:00",
-      "theme": null,
-      "cancelled": false,
-      "post_url": "https://www.instagram.com/p/DcyyadwNfF3",
-      "banner_url": "",
-      "owner_username": "dancedesignindia",
-      "venue_url": "https://www.google.com/maps/search/?api=1&query=Khar+SOCIAL",
-      "organizer_url": "https://instagram.com/dancedesignindia/",
-      "id": "20260907-2100-DANCEDESIGNINDIA-SOCIAL_KHAR",
-      "created_at": "2026-09-03T00:11:20"
-    },
-    {
-      "title": "Conri Boomerang Nights",
-      "summary": "₹300 cover charge",
-      "venue": "Escobar, Bandra",
-      "venue_url": "https://www.google.com/maps/search/?api=1&query=Escobar+Bandra",
-      "event_type": "Social",
-      "dance_styles": "Bachata • Salsa • Kizomba",
-      "cost": 400,
-      "currency": "₹",
-      "organizer_name": "Conri Boomerang Nights",
-      "organizer_url": "https://instagram.com/conri_boomerang/",
-      "start_date_time": "2026-09-08T21:00:00",
-      "end_date_time": "2026-09-09T01:00:00",
-      "cancelled": false,
-      "theme": null,
-      "post_url": "https://instagram.com/conri_boomerang/",
-      "banner_url": "",
-      "id": "20260908-2100-CONRI_BOOMERANG-ESCO_BA#TUESDAY",
-      "created_at": "2026-09-02T04:58:11"
-    },
-    {
-      "title": "Latin Sundowner Pool Party",
-      "summary": "An evening of social dancing, poolside vibes, and a special Salsa showcase by SCBAK students. Includes a ₹250 cover charge.",
-      "venue": "Vivanta, Thane",
-      "event_type": "Social",
-      "dance_styles": "Salsa • Bachata • Rueda • Jive • Kizomba",
-      "cost": 500,
-      "currency": "₹",
-      "organizer_name": "Salsa Classes By Aishwarya K",
-      "start_date_time": "2026-09-12T17:30:00",
-      "end_date_time": "2026-09-12T22:30:00",
-      "theme": "Sunset Beach Club",
-      "cancelled": false,
-      "post_url": "https://www.instagram.com/p/DcdvVNMIKHd",
-      "banner_url": "",
-      "owner_username": "salsaclassesbyaishwarya.k",
-      "venue_url": "https://www.google.com/maps/search/?api=1&query=Vivanta+Survey+No.+29A+Lal+Bahadur+Shastri+Marg+Gokul+Nagar+Thane",
-      "organizer_url": "https://instagram.com/salsaclassesbyaishwarya.k/",
-      "id": "20260912-1730-SALSACLASSESBYAISHWARYA.K-VIVANTA_TNA",
-      "created_at": "2026-08-25T21:12:09"
-    },
-    {
-      "title": "Monthly SDC Social",
-      "summary": "Includes a Semba pre-social workshop for dancers with 1+ year of learning. Limited to 60 entries, pre-registration only.",
-      "venue": "Studio ConRi, Andheri",
-      "event_type": "Social",
-      "dance_styles": "Semba • Kizomba",
-      "cost": "Workshop: 500 | Social: 300",
-      "currency": "₹",
-      "organizer_name": "SDC by Afsar & Visheshta",
-      "start_date_time": "2026-09-12T21:00:00",
-      "end_date_time": "2026-09-13T01:00:00",
-      "theme": null,
-      "cancelled": false,
-      "post_url": "https://www.instagram.com/p/DcoUaXPE-gD",
-      "banner_url": "",
-      "owner_username": "sdc_kizomba",
-      "venue_url": "https://www.google.com/maps/search/?api=1&query=Studio+ConRi+Andheri+west",
-      "organizer_url": "https://instagram.com/sdc_kizomba/",
-      "id": "20260912-2100-SDC_KIZOMBA-CONRI_ADH",
-      "created_at": "2026-09-02T00:16:02"
-    },
-    {
-      "title": "Urban Kiz Workshop & SDC Social",
-      "summary": "Urban Kiz workshop with Clayton followed by SDC social. Minimum 6 months of Urban Kiz learning required.",
-      "venue": "Byou new studio, Andheri",
-      "event_type": "Workshop",
-      "dance_styles": "Urban Kiz • Kizomba",
-      "cost": "Contact Host",
-      "currency": "₹",
-      "organizer_name": "SDC by Afsar & Visheshta",
-      "start_date_time": "2026-09-25T21:00:00",
-      "end_date_time": "2026-09-26T01:00:00",
-      "theme": null,
-      "cancelled": false,
-      "post_url": "https://www.instagram.com/p/DcoUaXPE-gD",
-      "banner_url": "",
-      "owner_username": "sdc_kizomba",
-      "venue_url": "https://www.google.com/maps/search/?api=1&query=Byou+new+studio+Andheri+west",
-      "organizer_url": "https://instagram.com/sdc_kizomba/",
-      "id": "20260925-2100-SDC_KIZOMBA-BYOUNEWSTUDIO_ADH",
-      "created_at": "2026-09-02T00:16:02"
-    },
-    {
-      "title": "SDC Kizomba Post-Retreat Party",
-      "summary": "Post-retreat workshop and social featuring Kizomba, Urban Kiz, and Semba. Eligibility: Minimum 6 months of Kizomba learning.",
-      "venue": "Studio ConRi, Andheri",
-      "event_type": "Workshop & Social",
-      "dance_styles": "Kizomba • Urban Kiz • Semba",
-      "cost": "1000 (Workshop), 300 (Social)",
-      "currency": "₹",
-      "organizer_name": "SDC by Afsar & Visheshta",
-      "start_date_time": "2026-09-28T21:00:00",
-      "end_date_time": "2026-09-29T01:00:00",
-      "theme": null,
-      "cancelled": false,
-      "banner_url": "",
-      "venue_url": "https://www.google.com/maps/search/?api=1&query=Studio+ConRi+Andheri+west",
-      "organizer_url": "https://instagram.com/sdc_kizomba/",
-      "id": "20260928-2100-SDC_KIZOMBA-CONRI_ADH",
-      "post_url": "",
-      "created_at": "2026-09-02T00:22:43"
-    }
-  ]
+    "events": [
+        {
+            "id": "20260708-2030-LT-MIRAGE_STC",
+            "title": "Latin Twsit Socials",
+            "summary": "",
+            "venue": "📍 Mirage, Santacruz",
+            "venueUrl": "https://maps.app.goo.gl/bEoEYNkQtjSJXGHi8",
+            "type": "💃 Social : Salsa | Bachata | Kizomba",
+            "cost": 400,
+            "currency": "₹",
+            "organizers": [
+                {
+                    "name": "Latin Twist",
+                    "url": "https://instagram.com/latin_twist/"
+                }
+            ],
+            "startDateTime": "2026-07-08T20:30:00",
+            "endDateTime": "2026-07-09T01:00:00",
+            "cancelled": false
+        },
+        {
+            "id": "20260709-2030-VVDC-GLASSHOUSE_MDD",
+            "title": "VVDC Jive Social",
+            "summary": "",
+            "venue": "📍 Glass House Lounge, Malad",
+            "venueUrl": "https://maps.app.goo.gl/1pPtaM5jQgRbSUR87",
+            "type": "💃 Social : Jive",
+            "cost": 400,
+            "currency": "₹",
+            "organizers": [
+                {
+                    "name": "Valentino Victoria Dance Company (VVDC)",
+                    "url": "https://instagram.com/v.v.d.c/"
+                }
+            ],
+            "startDateTime": "2026-07-09T20:30:00",
+            "endDateTime": "2026-07-10T01:00:00",
+            "cancelled": false
+        },
+        {
+            "id": "20260711-2000-APDS-ICONIQA_MIA",
+            "title": "Mumbai Latin Nites",
+            "summary": "Free entry for ladies till 9:30PM. Full cover (unlimited appetizer and beer and wine)",
+            "venue": "📍 ICONIQA, Mumbai Airport",
+            "venueUrl": "https://maps.app.goo.gl/1pPtaM5jQgRbSUR87",
+            "type": "💃 Social : Jive | Bachata | Kizomba",
+            "cost": 600,
+            "currency": "₹",
+            "organizers": [
+                {
+                    "name": "Amrit Pal Dance Singh",
+                    "url": "https://www.instagram.com/amritpaldancesingh/"
+                }
+            ],
+            "startDateTime": "2026-07-11T20:00:00",
+            "endDateTime": "2026-07-12T01:00:00",
+            "cancelled": false
+        },
+        {
+            "id": "20260712-1600-2000-CONRI-ESCO_BA",
+            "title": "Conri Coffee Rave",
+            "summary": "₹300 cover charge",
+            "venue": "📍 Escobar, Bandra",
+            "venueUrl": "https://maps.app.goo.gl/6k8TkxcqAg7XP7ew9",
+            "type": "💃 Social : Bachata | Salsa | Kizomba| Commercial | Afro",
+            "cost": 500,
+            "currency": "₹",
+            "organizers": [
+                {
+                    "name": "Conri Boomerang Nights",
+                    "url": "https://instagram.com/conri_boomerang/"
+                }
+            ],
+            "startDateTime": "2026-07-12T16:00:00",
+            "endDateTime": "2026-07-12T20:00:00",
+            "cancelled": false
+        },
+        {
+            "id": "20260712-1900-2300-DPLANET-OPULENT_ADH",
+            "title": "Jive Social",
+            "summary": "₹500 pre registration. ₹300 cover",
+            "venue": "📍 Opulent Banquet, Andheri",
+            "venueUrl": "https://maps.app.goo.gl/nNSWYXoQBaq5TqZw8",
+            "type": "💃 Social : Jive",
+            "cost": 600,
+            "currency": "₹",
+            "organizers": [
+                {
+                    "name": "Dance Planet",
+                    "url": "https://instagram.com/danceplanet_mumbai/"
+                }
+            ],
+            "startDateTime": "2026-07-12T19:00:00",
+            "endDateTime": "2026-07-12T23:00:00",
+            "cancelled": false
+        },
+        {
+            "id": "20260712-2030-LDS-TAP_WORLI",
+            "title": "Latin Delight Socials",
+            "summary": "",
+            "venue": "📍 TAP Resto Bar, Worli",
+            "venueUrl": "https://maps.app.goo.gl/kND3i9HkFeCRwjYx8",
+            "type": "💃 Social : Salsa | Bachata | Kizomba| Jive",
+            "cost": 600,
+            "currency": "₹",
+            "organizers": [
+                {
+                    "name": "Latin Delight Socials",
+                    "url": "https://instagram.com/latindelightsocials/"
+                }
+            ],
+            "startDateTime": "2026-07-12T20:30:00",
+            "endDateTime": "2026-07-13T01:00:00",
+            "cancelled": false
+        },
+        {
+            "id": "20260713-2100-JUKEBOX-145_BA",
+            "title": "Jukebox Dance Nights",
+            "summary": "",
+            "venue": "📍 145 Café & Bar, Bandra",
+            "venueUrl": "https://maps.app.goo.gl/neVV3nBwetsuFo2f7",
+            "type": "💃 Social : Jive",
+            "cost": "500",
+            "currency": "₹",
+            "organizers": [
+                {
+                    "name": "Jukebox Dance Nights",
+                    "url": "https://instagram.com/jukeboxdancenights/"
+                }
+            ],
+            "startDateTime": "2026-07-13T21:00:00",
+            "endDateTime": "2026-07-14T01:00:00",
+            "cancelled": false
+        },
+        {
+            "id": "20260714-2100-CONRI-ESCO_BA",
+            "title": "Conri Boomerang Nights",
+            "summary": "₹300 cover charge",
+            "venue": "📍 Escobar, Bandra",
+            "venueUrl": "https://maps.app.goo.gl/6k8TkxcqAg7XP7ew9",
+            "type": "💃 Social : Bachata | Salsa | Kizomba",
+            "cost": 400,
+            "currency": "₹",
+            "organizers": [
+                {
+                    "name": "Conri Boomerang Nights",
+                    "url": "https://instagram.com/conri_boomerang/"
+                }
+            ],
+            "startDateTime": "2026-07-14T21:00:00",
+            "endDateTime": "2026-07-15T01:00:00",
+            "cancelled": false
+        },
+        {
+            "id": "20260728-2100-ROCKODEO-145_BA",
+            "title": "Rockodeo Dance Nights",
+            "summary": "",
+            "venue": "📍 145 Café & Bar, Bandra",
+            "venueUrl": "https://maps.app.goo.gl/neVV3nBwetsuFo2f7",
+            "type": "💃 Social : Jive",
+            "cost": "undefined",
+            "currency": "₹",
+            "organizers": [
+                {
+                    "name": "Rockodeo Dance Nights",
+                    "url": "https://instagram.com/rockodeodancenights/"
+                }
+            ],
+            "startDateTime": "2026-07-28T21:00:00",
+            "endDateTime": "2026-07-29T01:00:00",
+            "cancelled": false
+        }
+    ]
 }
