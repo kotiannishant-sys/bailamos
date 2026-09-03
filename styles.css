@@ -207,10 +207,10 @@ body.menu-is-open {
 }
 
 .masthead {
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
-  gap: 20px;
-  padding: 22px 0 14px;
+  gap: 16px;
+  padding: 18px 0 12px;
 }
 
 .city-mark {
@@ -261,29 +261,21 @@ body.menu-is-open {
 }
 
 .month-mark {
-  display: grid;
-  justify-items: end;
-  gap: 4px;
-  padding-bottom: 2px;
-  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-text);
   font-family: var(--font-display);
-  font-size: clamp(16px, 2.4vw, 22px);
+  font-size: clamp(22px, 3.5vw, 30px);
+  font-weight: 600;
   line-height: 1;
   text-align: right;
   white-space: nowrap;
 }
 
-.month-index {
-  color: var(--color-text-faint);
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.12em;
-}
-
 .today-button {
   min-height: 28px;
-  justify-self: end;
-  padding: 4px 9px;
+  padding: 4px 10px;
   background: transparent;
   border: 1px solid var(--color-separator);
   border-radius: var(--radius-action);
@@ -337,11 +329,19 @@ body.menu-is-open {
 }
 
 .date-navigation {
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 10;
   display: flex;
   align-items: center;
   gap: 3px;
-  margin-top: 18px;
+  margin-top: 10px;
+  padding: 8px 0;
+  background: rgba(9, 8, 14, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 42, 133, 0.15);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 .date-strip {
@@ -372,19 +372,19 @@ body.menu-is-open {
 .date-cell {
   position: relative;
   display: grid;
-  flex: 0 0 48px;
+  flex: 0 0 54px;
   place-items: center;
   align-content: center;
   gap: 4px;
-  min-height: 70px;
-  padding: 8px 4px 12px;
+  min-height: 76px;
+  padding: 8px 5px 12px;
   background: var(--color-secondary);
   border: 1px solid var(--color-separator-soft);
   border-radius: 0;
   color: var(--color-text-muted);
   scroll-snap-align: start;
   transition: background-color var(--motion-standard), border-color var(--motion-standard), color var(--motion-standard), transform var(--motion-standard), box-shadow var(--motion-standard);
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 13px 100%, 0 calc(100% - 13px));
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 14px 100%, 0 calc(100% - 14px));
 }
 
 .date-cell:hover,
@@ -417,7 +417,7 @@ body.menu-is-open {
 
 .date-weekday {
   font-family: var(--font-mono);
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 500;
   letter-spacing: 0.08em;
   line-height: 1;
@@ -426,10 +426,10 @@ body.menu-is-open {
 
 .date-number {
   font-family: var(--font-display);
-  font-size: 27px;
+  font-size: 30px;
   font-variant-numeric: tabular-nums;
   font-weight: 600;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.05em;
   line-height: 1;
 }
 
@@ -626,11 +626,13 @@ body.menu-is-open {
 
 .utility-section {
   position: sticky;
-  z-index: 4;
-  top: 0;
-  margin-top: 22px;
-  padding: 12px 0 10px;
-  background: var(--color-night);
+  z-index: 9;
+  top: 94px;
+  margin-top: 10px;
+  padding: 8px 0;
+  background: rgba(9, 8, 14, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 
 .utility-row {
@@ -950,6 +952,17 @@ body.menu-is-open {
   min-height: 1px;
 }
 
+@keyframes cardFadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
 .timeline {
   display: grid;
   gap: var(--space-group);
@@ -958,43 +971,14 @@ body.menu-is-open {
 
 .date-group {
   position: relative;
-  display: grid;
-  grid-template-columns: 68px minmax(0, 1fr);
-  gap: 14px;
+  display: block;
+  width: 100%;
   scroll-margin-top: 86px;
+  animation: cardFadeInUp 260ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .date-marker {
-  display: grid;
-  align-content: start;
-  gap: 1px;
-  padding-top: 1px;
-  color: var(--color-text-muted);
-  font-family: var(--font-mono);
-  line-height: 1;
-  text-align: right;
-}
-
-.date-marker span {
-  color: var(--color-brass);
-  font-size: 11px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
-.date-marker strong {
-  color: var(--color-text);
-  font-family: var(--font-display);
-  font-size: 32px;
-  font-weight: 500;
-  letter-spacing: -0.06em;
-}
-
-.date-marker small {
-  color: var(--color-text-faint);
-  font-size: 9px;
-  letter-spacing: 0.04em;
-  text-transform: none;
+  display: none;
 }
 
 .date-group-events {
@@ -1002,8 +986,9 @@ body.menu-is-open {
   display: grid;
   gap: var(--space-card);
   min-width: 0;
-  padding-left: 14px;
-  border-left: 2px solid var(--color-brass);
+  width: 100%;
+  padding-left: 0;
+  border-left: 0;
 }
 
 .event-ticket {
@@ -1019,6 +1004,8 @@ body.menu-is-open {
   color: var(--color-text);
   text-align: left;
   clip-path: polygon(0 0, calc(100% - var(--corner-ticket)) 0, 100% var(--corner-ticket), 100% 100%, 0 100%);
+  animation: cardFadeInUp 280ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: calc(var(--ticket-index, 0) * 35ms);
   transition: background-color var(--motion-standard), border-color var(--motion-standard), color var(--motion-standard), opacity var(--motion-standard), transform var(--motion-standard), box-shadow var(--motion-standard);
 }
 
@@ -1306,7 +1293,9 @@ body.menu-is-open {
   margin-top: 20px;
   background: var(--color-secondary);
   border: 1px solid var(--color-separator);
+  border-radius: var(--radius-action);
   color: var(--color-text-muted);
+  animation: cardFadeInUp 280ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .state-panel p {
@@ -1485,29 +1474,40 @@ body.menu-is-open {
 
 .detail-list {
   display: grid;
-  gap: 0;
-  margin: 24px 0 0;
-  border-top: 1px solid var(--color-separator);
+  gap: 12px;
+  margin: 20px 0 0;
+  border-top: 0;
 }
 
 .detail-row {
-  display: grid;
-  grid-template-columns: 58px minmax(0, 1fr);
-  gap: 14px;
-  padding: 12px 0;
-  border-bottom: 1px solid var(--color-separator-soft);
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 4px 0;
+  border-bottom: 0;
 }
 
 .detail-row dt {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 0 0 22px;
+  width: 22px;
+  min-height: 22px;
+  margin: 0;
   color: var(--color-text-faint);
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+}
+
+.detail-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--color-neon-purple);
+  flex-shrink: 0;
 }
 
 .detail-row dd {
   min-width: 0;
+  flex: 1;
   margin: 0;
   color: var(--color-text-muted);
   font-size: 14px;
@@ -1938,6 +1938,10 @@ body.menu-is-open {
 }
 
 @media (max-width: 620px) {
+  .site-header {
+    padding-top: 12px;
+  }
+
   .brand-lockup {
     align-items: flex-start;
     flex-direction: column;
@@ -1951,8 +1955,9 @@ body.menu-is-open {
   }
 
   .masthead {
-    align-items: flex-end;
-    gap: 12px;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 0 4px;
   }
 
   .masthead h1 {
@@ -1960,11 +1965,14 @@ body.menu-is-open {
   }
 
   .month-mark {
-    font-size: 16px;
+    font-size: clamp(18px, 4.5vw, 24px);
+    gap: 8px;
   }
 
   .date-navigation {
     margin-inline: -4px;
+    margin-top: 4px;
+    padding: 6px 0 4px;
   }
 
   .date-strip {
@@ -1973,7 +1981,8 @@ body.menu-is-open {
   }
 
   .date-cell {
-    flex-basis: 46px;
+    flex-basis: 50px;
+    min-height: 72px;
   }
 
   .range-button {
@@ -1985,7 +1994,10 @@ body.menu-is-open {
   }
 
   .utility-section {
+    top: 88px;
     margin-inline: -2px;
+    margin-top: 4px;
+    padding: 6px 0;
   }
 
   .utility-row {
@@ -2012,20 +2024,13 @@ body.menu-is-open {
   }
 
   .date-group {
-    grid-template-columns: 54px minmax(0, 1fr);
-    gap: 10px;
-  }
-
-  .date-marker strong {
-    font-size: 28px;
-  }
-
-  .date-marker span {
-    font-size: 10px;
+    display: block;
+    width: 100%;
   }
 
   .date-group-events {
-    padding-left: 12px;
+    padding-left: 0;
+    width: 100%;
   }
 
   .event-ticket {

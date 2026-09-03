@@ -1,6 +1,26 @@
 {
   "events": [
     {
+      "title": "Conri Boomerang Nights",
+      "summary": "₹300 cover charge",
+      "venue": "Escobar, Bandra",
+      "venue_url": "https://www.google.com/maps/search/?api=1&query=Escobar+Bandra",
+      "event_type": "Social",
+      "dance_styles": "Bachata • Salsa • Kizomba",
+      "cost": 400,
+      "currency": "₹",
+      "organizer_name": "Conri Boomerang Nights",
+      "organizer_url": "https://instagram.com/conri_boomerang/",
+      "start_date_time": "2026-09-01T21:00:00",
+      "end_date_time": "2026-09-02T01:00:00",
+      "cancelled": false,
+      "theme": null,
+      "post_url": "",
+      "banner_url": "",
+      "id": "20260901-2100-CONRI_BOOMERANG-ESCO_BA#TUESDAY",
+      "created_at": "2026-08-26T03:23:39"
+    },
+    {
       "title": "Latin Twist Wednesdays",
       "summary": "Bachata Workshop by Mary Lobo followed by a Latin Social with DJ Cza. Entry options: Workshop + Social ₹400, Couple Workshop + Social ₹600 (Online Only), Social Only ₹500 cover.",
       "venue": "Belmarose, Vile Parle",
@@ -118,7 +138,7 @@
       "cancelled": false,
       "theme": null,
       "post_url": "https://instagram.com/good_vibes_events_mumbai/",
-      "banner_url": "",
+      "banner_url": "https://picsum.photos/200/300",
       "id": "20260906-1700-GOOD_VIBES_EVENTS_MUMBAI-BAAMEE_ADH#SUNDAY",
       "created_at": "2026-08-31T00:12:08"
     },
@@ -141,27 +161,6 @@
       "banner_url": "",
       "id": "20260906-2100-LATINDELIGHTSOCIALS-TAP_WORLI#SUNDAY_#_EVERY_2_WEEKS_#_2026-08-23",
       "created_at": "2026-08-31T00:12:08"
-    },
-    {
-      "title": "Khar Social Party",
-      "summary": "Includes a complimentary workshop by DD Squad, 1 hour of Salsa Romantica special, and social dancing with Salsa & Bachata music.",
-      "venue": "Khar SOCIAL",
-      "event_type": "Social",
-      "dance_styles": "Salsa • Bachata",
-      "cost": "Contact Host",
-      "currency": "₹",
-      "organizer_name": "Dance Design",
-      "start_date_time": "2026-09-07T21:00:00",
-      "end_date_time": "2026-09-08T00:00:00",
-      "theme": null,
-      "cancelled": false,
-      "post_url": "https://www.instagram.com/p/DcyyadwNfF3",
-      "banner_url": "",
-      "owner_username": "dancedesignindia",
-      "venue_url": "https://www.google.com/maps/search/?api=1&query=Khar+SOCIAL",
-      "organizer_url": "https://instagram.com/dancedesignindia/",
-      "id": "20260907-2100-DANCEDESIGNINDIA-SOCIAL_KHAR",
-      "created_at": "2026-09-03T00:11:20"
     },
     {
       "title": "Conri Boomerang Nights",

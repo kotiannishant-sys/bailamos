@@ -201,8 +201,9 @@ function formatDateCellLabel(dateKey, eventCount) {
 }
 
 
-function formatEndTime(date) {
-  return `ends ${formatWeekday(date)} ${formatTime(date)}`;
+function formatEndTime(endDate) {
+  if (!endDate) return '';
+  return `to ${formatTime(endDate)}`;
 }
 
 function formatTimeRange(event) {
@@ -445,7 +446,7 @@ function renderDateStrip() {
     dom.rangeNext.title = dom.rangeNext.getAttribute('aria-label');
   }
   dom.monthLabel.textContent = formatMonthLabel(monthStart);
-  dom.monthIndex.textContent = monthStart.slice(5, 7) + ' / ' + monthStart.slice(0, 4);
+  if (dom.monthIndex) dom.monthIndex.textContent = monthStart.slice(5, 7) + ' / ' + monthStart.slice(0, 4);
 }
 
 function renderFilterTray() {
@@ -497,7 +498,7 @@ function renderFilterTray() {
   `;
 }
 
-function renderEventTicket(event) {
+function renderEventTicket(event, index = 0) {
   const selected = event.id === appState.selectedEventId;
   const cancelled = Boolean(event.cancelled);
   const ticketLabel = [
@@ -516,6 +517,7 @@ function renderEventTicket(event) {
       data-event-id="${escapeHtml(event.id)}"
       aria-pressed="${selected}"
       aria-label="${escapeHtml(ticketLabel)}"
+      style="--ticket-index: ${index};"
     >
       <span class="ticket-time">
         <span class="time-primary${cancelled ? ' is-struck' : ''}">${escapeHtml(formatTime(event.startDate))}</span>
@@ -535,16 +537,10 @@ function renderEventTicket(event) {
 }
 
 function renderDateGroup(dateKey, events) {
-  const group = formatDayGroup(dateKey);
   return `
-    <section class="date-group" id="date-group-${dateKey}" aria-labelledby="heading-${dateKey}">
-      <div class="date-marker">
-        <span>${escapeHtml(group.weekday)}</span>
-        <strong id="heading-${dateKey}">${escapeHtml(group.day)}</strong>
-        <small>${escapeHtml(group.month)}</small>
-      </div>
+    <section class="date-group" id="date-group-${dateKey}" aria-label="${escapeHtml(formatDateHeading(dateKey))}">
       <div class="date-group-events">
-        ${events.map(renderEventTicket).join('')}
+        ${events.map((event, index) => renderEventTicket(event, index)).join('')}
       </div>
     </section>
   `;
@@ -645,8 +641,8 @@ const DETAIL_ICONS = {
   time: `<svg class="detail-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>`,
   venue: `<svg class="detail-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>`,
   styles: `<svg class="detail-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>`,
-  price: `<svg class="detail-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2"/><path d="M13 11v2"/><path d="M13 17v2"/></svg>`,
-  theme: `<svg class="detail-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg>`,
+  price: `<svg class="detail-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg>`,
+  theme: `<svg class="detail-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23Z"/></svg>`,
 };
 
 function renderInfoRow(iconSvg, label, value) {
@@ -697,10 +693,10 @@ function renderDetailPanel(event, mode) {
         <dl class="detail-list">
           ${renderInfoRow(DETAIL_ICONS.time, 'Time', `<span class="mono-value">${escapeHtml(formatTimeRange(event))}</span>`)}
           ${renderInfoRow(DETAIL_ICONS.venue, 'Venue', event.venue
-            ? venueUrl
-              ? `<a href="${escapeHtml(venueUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(event.venue)} <i class="ti ti-external-link" aria-hidden="true"></i><span class="sr-only">${externalLabel}</span></a>`
-              : escapeHtml(event.venue)
-            : '')}
+    ? venueUrl
+      ? `<a href="${escapeHtml(venueUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(event.venue)} <i class="ti ti-external-link" aria-hidden="true"></i><span class="sr-only">${externalLabel}</span></a>`
+      : escapeHtml(event.venue)
+    : '')}
           ${renderInfoRow(DETAIL_ICONS.styles, 'Styles', escapeHtml(styles))}
           ${renderInfoRow(DETAIL_ICONS.price, 'Price', cost ? `<span class="mono-value">${cost}</span>` : '')}
           ${renderInfoRow(DETAIL_ICONS.theme, 'Theme', event.theme ? escapeHtml(event.theme) : '')}
@@ -709,8 +705,8 @@ function renderDetailPanel(event, mode) {
           <div class="organizer-block">
             <span class="detail-label">Hosted by</span>
             ${organizerUrl
-              ? `<a class="organizer-link" href="${escapeHtml(organizerUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(event.organizer_name)} <i class="ti ti-external-link" aria-hidden="true"></i><span class="sr-only">${externalLabel}</span></a>`
-              : `<span class="organizer-link is-plain">${escapeHtml(event.organizer_name)}</span>`}
+        ? `<a class="organizer-link" href="${escapeHtml(organizerUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(event.organizer_name)} <i class="ti ti-external-link" aria-hidden="true"></i><span class="sr-only">${externalLabel}</span></a>`
+        : `<span class="organizer-link is-plain">${escapeHtml(event.organizer_name)}</span>`}
           </div>
         ` : ''}
         ${(venueUrl || postUrl) ? `
