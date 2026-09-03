@@ -551,14 +551,20 @@ function renderEmptyDateState(filteredEvents) {
   const selectedLabel = formatDateHeading(appState.selectedDateKey);
   const nextAction = nextEvent
     ? `
-      <p>The next listed event is <strong>${escapeHtml(nextEvent.title)}</strong> on ${escapeHtml(formatDateHeading(nextEvent.dateKey))}.</p>
-      <button class="text-action" type="button" data-action="select-date" data-date-key="${nextEvent.dateKey}">Go to ${escapeHtml(formatDateHeading(nextEvent.dateKey))}</button>
+      <p class="empty-state-desc">The next upcoming social is <strong>${escapeHtml(nextEvent.title)}</strong> on <strong>${escapeHtml(formatDateHeading(nextEvent.dateKey))}</strong>.</p>
+      <button class="solid-action empty-state-btn" type="button" data-action="select-date" data-date-key="${nextEvent.dateKey}">
+        <span>Jump to ${escapeHtml(formatDateHeading(nextEvent.dateKey))}</span>
+        <i class="ti ti-arrow-right" aria-hidden="true"></i>
+      </button>
     `
-    : '<p>There are no later events in the current calendar range.</p>';
+    : '<p class="empty-state-desc">There are no later events in the current calendar range.</p>';
 
   return `
     <div class="state-panel empty-date-state">
-      <p class="state-kicker">No events listed for ${escapeHtml(selectedLabel)}.</p>
+      <span class="state-svg-mark" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 16s-1.5-2-4-2-4 2-4 2"/><line x1="9" x2="9.01" y1="9" y2="9"/><line x1="15" x2="15.01" y1="9" y2="9"/></svg>
+      </span>
+      <p class="state-kicker">No events listed for ${escapeHtml(selectedLabel)}</p>
       ${nextAction}
     </div>
   `;
@@ -567,6 +573,9 @@ function renderEmptyDateState(filteredEvents) {
 function renderNoMatchState() {
   return `
     <div class="state-panel no-match-state">
+      <span class="state-svg-mark" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 16s-1.5-2-4-2-4 2-4 2"/><line x1="9" x2="9.01" y1="9" y2="9"/><line x1="15" x2="15.01" y1="9" y2="9"/></svg>
+      </span>
       <p class="state-kicker">No events match these filters.</p>
       <p>Try another dance style or clear the current filters.</p>
       <button class="text-action" type="button" data-action="clear-filters">Clear filters</button>
