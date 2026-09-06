@@ -669,60 +669,102 @@ function renderInfoRow(iconSvg, label, value) {
 }
 
 function renderDetailPanel(event, mode) {
-  const isDrawer = mode === 'drawer';
   const headingId = `${mode}-title`;
   const status = getStatus(event, appState.now);
   const venueUrl = safeUrl(event.venue_url);
   const organizerUrl = safeUrl(event.organizer_url);
   const postUrl = safeUrl(event.post_url);
   const bannerUrl = safeUrl(event.banner_url);
-  const styles = event.styles.length ? event.styles.join(' · ') : '';
+  const styles = event.styles && event.styles.length ? event.styles.join(' • ') : (event.dance_styles || '');
   const cost = formatCost(event.cost, event.currency);
-  const externalLabel = ' (opens in a new tab)';
+  const timeFormatted = formatTimeRange(event);
+  const isToday = event.dateKey === appState.todayKey;
 
   return `
-    <div class="detail-panel-shell${isDrawer && appState.drawerExpanded ? ' is-expanded' : ''}">
-      <div class="detail-topbar">
-        <button class="detail-close" type="button" data-action="close-details" aria-label="Close event details"><i class="ti ti-x" aria-hidden="true"></i></button>
-        <span class="detail-topline">${escapeHtml(formatFullDate(event.startDate))} · ${escapeHtml(formatTimeRange(event))}</span>
-      </div>
-      <div class="detail-scroll">
+    <div class="ritmo-modal-card">
+      <div class="modal-banner-header${bannerUrl ? ' has-banner-img' : ' is-gradient-fallback'}" ${bannerUrl ? `style="background-image: url('${escapeHtml(bannerUrl)}');"` : ''}>
         ${bannerUrl ? `
-          <div class="detail-banner">
-            <img src="${escapeHtml(bannerUrl)}" alt="${escapeHtml(event.title)} event poster" loading="lazy" />
-          </div>
+          <button type="button" class="banner-expand-trigger" data-action="expand-banner" data-banner-url="${escapeHtml(bannerUrl)}" aria-label="Expand poster image">
+            <i class="ti ti-maximize" aria-hidden="true"></i> Expand Poster
+          </button>
         ` : ''}
-        <div class="detail-heading-block">
-          <div class="detail-status-line">
-            <span class="detail-kicker">${escapeHtml(event.event_type || 'Event')}</span>
-            ${status ? `<span class="status status-${status}">${status === 'live' ? 'Live' : status === 'upcoming' ? 'Upcoming' : 'Cancelled'}</span>` : ''}
+        <button class="modal-close-btn" type="button" data-action="close-details" aria-label="Close event modal">
+          <i class="ti ti-x" aria-hidden="true"></i>
+        </button>
+
+        <div class="modal-top-badges">
+          <div class="modal-left-badges">
+            <span class="modal-badge badge-type">${escapeHtml(event.event_type || 'SOCIAL')}</span>
+            <span class="modal-badge badge-status${isToday ? ' badge-today' : ''}">
+              <i class="${isToday ? 'ti ti-flame' : 'ti ti-calendar-event'}" aria-hidden="true"></i> ${isToday ? 'TODAY' : (status === 'live' ? 'LIVE' : (status === 'cancelled' ? 'CANCELLED' : 'UPCOMING'))}
+            </span>
           </div>
-          <h2 id="${headingId}" tabindex="-1">${cancelledTitle(event)}</h2>
-          ${event.summary ? `<p class="detail-summary">${escapeHtml(event.summary)}</p>` : ''}
+          <span class="modal-badge badge-time">
+            <i class="ti ti-clock" aria-hidden="true"></i> ${escapeHtml(timeFormatted)}
+          </span>
         </div>
-        <dl class="detail-list">
-          ${renderInfoRow(DETAIL_ICONS.time, 'Time', `<span class="mono-value">${escapeHtml(formatTimeRange(event))}</span>`)}
-          ${renderInfoRow(DETAIL_ICONS.venue, 'Venue', event.venue
-    ? venueUrl
-      ? `<a href="${escapeHtml(venueUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(event.venue)} <i class="ti ti-external-link" aria-hidden="true"></i><span class="sr-only">${externalLabel}</span></a>`
-      : escapeHtml(event.venue)
-    : '')}
-          ${renderInfoRow(DETAIL_ICONS.styles, 'Styles', escapeHtml(styles))}
-          ${renderInfoRow(DETAIL_ICONS.price, 'Price', cost ? `<span class="mono-value">${cost}</span>` : '')}
-          ${renderInfoRow(DETAIL_ICONS.theme, 'Theme', event.theme ? escapeHtml(event.theme) : '')}
-        </dl>
-        ${event.organizer_name ? `
-          <div class="organizer-block">
-            <span class="detail-label">Hosted by</span>
-            ${organizerUrl
-        ? `<a class="organizer-link" href="${escapeHtml(organizerUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(event.organizer_name)} <i class="ti ti-external-link" aria-hidden="true"></i><span class="sr-only">${externalLabel}</span></a>`
-        : `<span class="organizer-link is-plain">${escapeHtml(event.organizer_name)}</span>`}
+
+        <h2 class="modal-event-title" id="${headingId}">${cancelledTitle(event)}</h2>
+      </div>
+
+      <div class="modal-card-body">
+        <div class="modal-info-list">
+          ${styles ? `
+            <div class="modal-info-item">
+              <span class="info-icon"><i class="ti ti-music" aria-hidden="true"></i></span>
+              <span class="info-text">${escapeHtml(styles)}</span>
+            </div>
+          ` : ''}
+
+          ${event.venue ? `
+            <div class="modal-info-item">
+              <span class="info-icon"><i class="ti ti-map-pin" aria-hidden="true"></i></span>
+              <span class="info-text">
+                ${venueUrl
+                  ? `<a href="${escapeHtml(venueUrl)}" target="_blank" rel="noopener noreferrer" class="info-link">${escapeHtml(event.venue)} <i class="ti ti-external-link" aria-hidden="true"></i></a>`
+                  : escapeHtml(event.venue)}
+              </span>
+            </div>
+          ` : ''}
+
+          ${cost ? `
+            <div class="modal-info-item">
+              <span class="info-icon"><i class="ti ti-ticket" aria-hidden="true"></i></span>
+              <span class="info-text font-mono">${cost}</span>
+            </div>
+          ` : ''}
+
+          ${event.organizer_name ? `
+            <div class="modal-info-item">
+              <span class="info-icon"><i class="ti ti-microphone" aria-hidden="true"></i></span>
+              <span class="info-text">
+                ${organizerUrl
+                  ? `<a href="${escapeHtml(organizerUrl)}" target="_blank" rel="noopener noreferrer" class="info-link">${escapeHtml(event.organizer_name)} <i class="ti ti-external-link" aria-hidden="true"></i></a>`
+                  : escapeHtml(event.organizer_name)}
+              </span>
+            </div>
+          ` : ''}
+        </div>
+
+        ${event.summary ? `
+          <div class="modal-notice-box">
+            <i class="ti ti-info-circle" aria-hidden="true"></i>
+            <span>${escapeHtml(event.summary)}</span>
           </div>
         ` : ''}
+
         ${(venueUrl || postUrl) ? `
-          <div class="detail-actions">
-            ${venueUrl ? `<a class="action-button" href="${escapeHtml(venueUrl)}" target="_blank" rel="noopener noreferrer"><i class="ti ti-map-pin" aria-hidden="true"></i>Maps<span class="sr-only">${externalLabel}</span></a>` : ''}
-            ${postUrl ? `<a class="action-button" href="${escapeHtml(postUrl)}" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-instagram" aria-hidden="true"></i>Instagram post<span class="sr-only">${externalLabel}</span></a>` : ''}
+          <div class="modal-action-row">
+            ${venueUrl ? `
+              <a class="modal-action-btn" href="${escapeHtml(venueUrl)}" target="_blank" rel="noopener noreferrer">
+                <i class="ti ti-map-pin" aria-hidden="true"></i> View Map
+              </a>
+            ` : ''}
+            ${postUrl ? `
+              <a class="modal-action-btn" href="${escapeHtml(postUrl)}" target="_blank" rel="noopener noreferrer">
+                <i class="ti ti-brand-instagram" aria-hidden="true"></i> Instagram Post
+              </a>
+            ` : ''}
           </div>
         ` : ''}
       </div>
@@ -888,7 +930,7 @@ function openEvent(eventId, shouldScroll = false) {
   appState.rangeStartKey = getMonthStartKey(event.dateKey);
   appState.selectedEventId = event.id;
   appState.selectedDateKey = event.dateKey;
-  appState.overlay = window.matchMedia('(min-width: 960px)').matches ? 'inspector' : 'drawer';
+  appState.overlay = 'drawer';
   appState.drawerExpanded = false;
   appState.restoreFocus = document.activeElement;
   appState.restoreEventId = event.id;
@@ -898,7 +940,7 @@ function openEvent(eventId, shouldScroll = false) {
     window.requestAnimationFrame(() => scrollToDate(event.dateKey));
   }
 
-  if (appState.overlay === 'drawer') focusAfterOpen('drawer');
+  focusAfterOpen('drawer');
 }
 
 function clearSelectedEvent() {
@@ -923,6 +965,19 @@ function closeDetails() {
   if (restoreTarget && restoreTarget.isConnected && typeof restoreTarget.focus === 'function') {
     restoreTarget.focus();
   }
+}
+
+function openLightbox(imageUrl) {
+  if (!imageUrl) return;
+  if (dom.lightboxImage) dom.lightboxImage.src = imageUrl;
+  if (dom.lightboxLayer) dom.lightboxLayer.hidden = false;
+  document.body.classList.add('lightbox-is-open');
+}
+
+function closeLightbox() {
+  if (dom.lightboxLayer) dom.lightboxLayer.hidden = true;
+  if (dom.lightboxImage) dom.lightboxImage.src = '';
+  document.body.classList.remove('lightbox-is-open');
 }
 
 function moveDateSelection(direction) {
@@ -1100,6 +1155,10 @@ function bindEvents() {
     } else if (action === 'toggle-drawer') {
       appState.drawerExpanded = !appState.drawerExpanded;
       renderDetails();
+    } else if (action === 'expand-banner') {
+      openLightbox(actionTarget.dataset.bannerUrl);
+    } else if (action === 'close-lightbox') {
+      closeLightbox();
     }
   });
 
@@ -1155,6 +1214,10 @@ function createRitmoCalendar({
   dom.menuScrim = root.querySelector('#menu-scrim');
   dom.siteMenu = root.querySelector('#site-menu');
   dom.menuClose = root.querySelector('#menu-close');
+  dom.lightboxLayer = root.querySelector('#lightbox-layer');
+  dom.lightboxImage = root.querySelector('#lightbox-image');
+  dom.lightboxClose = root.querySelector('#lightbox-close');
+  dom.lightboxScrim = root.querySelector('#lightbox-scrim');
 
   const requestedMonthStart = /^\d{4}-\d{2}-\d{2}$/.test(initialRangeStart || '')
     ? getMonthStartKey(initialRangeStart)

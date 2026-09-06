@@ -23,7 +23,7 @@
   <div id="app" class="app-shell">
     <header class="site-header">
       <div class="header-top">
-        <a class="brand-lockup" href="#top" aria-label="Ritmo home">
+        <a class="brand-lockup" href="#" onclick="event.preventDefault(); window.scrollTo({top:0, behavior:'smooth'});" aria-label="Ritmo home">
           <div class="brand-title-row">
             <span class="brand-name">Ritmo</span>
             <span class="city-mark">Mumbai</span>
@@ -36,7 +36,7 @@
         </button>
       </div>
 
-      <div class="masthead" id="top">
+      <div class="masthead">
         <div class="month-mark" aria-live="polite">
           <span id="month-label">September 2026</span>
         </div>
@@ -108,6 +108,16 @@
         tabindex="-1"></section>
     </div>
 
+    <div class="lightbox-layer" id="lightbox-layer" hidden>
+      <button class="overlay-scrim" id="lightbox-scrim" type="button" aria-label="Close image preview" data-action="close-lightbox"></button>
+      <div class="lightbox-dialog" role="dialog" aria-modal="true" aria-label="Expanded banner image">
+        <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Close image preview" data-action="close-lightbox">
+          <i class="ti ti-x" aria-hidden="true"></i>
+        </button>
+        <img class="lightbox-image" id="lightbox-image" src="" alt="Expanded event poster" />
+      </div>
+    </div>
+
     <div class="menu-layer" id="site-menu-layer" hidden>
       <button class="overlay-scrim" id="menu-scrim" type="button" aria-label="Close menu"></button>
       <aside class="site-menu" id="site-menu" role="dialog" aria-modal="true" aria-labelledby="menu-title"
@@ -122,7 +132,7 @@
           </button>
         </div>
         <nav class="menu-nav" aria-label="Site navigation">
-          <a class="menu-link is-current" href="#top">
+          <a class="menu-link is-current" href="#" onclick="event.preventDefault(); window.scrollTo({top:0, behavior:'smooth'});">
             <span>Mumbai</span>
             <span class="menu-link-note">Current city</span>
           </a>
