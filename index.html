@@ -1,202 +1,146 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="color-scheme" content="dark" />
-    <meta name="theme-color" content="#130D10" />
-    <title>Ritmo — Mumbai Latin Calendar</title>
-    <meta
-      name="description"
-      content="Ritmo is a guide to Latin dance socials and workshops across Mumbai."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Archivo+SemiCondensed:wght@400;500;600;700&family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600;6..96,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont/tabler-icons.min.css"
-    />
-    <link rel="stylesheet" href="styles.css" />
-    <script src="app.js" defer></script>
-  </head>
-  <body>
-    <div id="app" class="app-shell">
-      <header class="site-header">
-        <div class="header-top">
-          <a class="brand-lockup" href="#top" aria-label="Ritmo home">
-            <span class="brand-name">Ritmo</span>
-            <span class="brand-caption">Your ultimate dance socials guide</span>
-          </a>
-          <button
-            class="icon-button"
-            id="menu-toggle"
-            type="button"
-            aria-label="Open menu"
-            aria-controls="site-menu-layer"
-            aria-expanded="false"
-          >
-            <i class="ti ti-menu-2" aria-hidden="true"></i>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#130D10" />
+  <title>Ritmo Mumbai - Dance Socials, Parties & Workshops</title>
+  <meta name="description"
+    content="Discover and plan Salsa, Bachata, Kizomba, and Jive dance socials and workshops in Mumbai. Always updated, mobile-first schedule." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Inter:wght@400;500;600;700&family=Rock+Salt&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont/tabler-icons.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="app.js" defer></script>
+</head>
+
+<body>
+  <div id="app" class="app-shell">
+    <header class="site-header">
+      <div class="header-top">
+        <a class="brand-lockup" href="#top" aria-label="Ritmo home">
+          <span class="brand-name">Ritmo</span>
+          <span class="brand-caption">Your ultimate dance socials guide</span>
+        </a>
+        <button class="icon-button" id="menu-toggle" type="button" aria-label="Open menu"
+          aria-controls="site-menu-layer" aria-expanded="false">
+          <i class="ti ti-menu-2" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="masthead" id="top">
+        <div class="city-mark">Mumbai</div>
+        <div class="month-mark" aria-live="polite">
+          <button class="today-button" id="today-button" type="button"
+            aria-label="Reload calendar and return to today">Today</button>
+          <span id="month-label">September 2026</span>
+        </div>
+      </div>
+      <div class="route-rule" aria-hidden="true"><span></span></div>
+    </header>
+
+    <div class="content-layout">
+      <main class="calendar-content" aria-busy="true">
+        <section class="date-navigation" aria-label="Calendar date range">
+          <button class="range-button" id="range-prev" type="button" aria-label="Previous month" title="Previous month">
+            <i class="ti ti-chevron-left" aria-hidden="true"></i>
+          </button>
+          <div class="date-strip" id="date-strip"></div>
+          <button class="range-button" id="range-next" type="button" aria-label="Next month" title="Next month">
+            <i class="ti ti-chevron-right" aria-hidden="true"></i>
+          </button>
+        </section>
+
+        <section class="utility-section" aria-label="Search and filters">
+          <div class="utility-row">
+            <form class="search-form" id="search-form" role="search">
+              <label class="field-label sr-only" for="search-input">Search events</label>
+              <div class="search-field">
+                <i class="ti ti-search" aria-hidden="true"></i>
+                <input id="search-input" name="search" type="search" autocomplete="off"
+                  placeholder="Title, venue or organizer" aria-describedby="result-announcement" />
+                <button class="input-clear" id="search-clear" type="button" aria-label="Clear search" hidden>
+                  <i class="ti ti-x" aria-hidden="true"></i>
+                </button>
+              </div>
+            </form>
+            <button class="filter-toggle" id="filters-toggle" type="button" aria-label="Filters" title="Filters"
+              aria-controls="filter-tray" aria-expanded="false">
+              <i class="ti ti-adjustments-horizontal" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="filter-tray" id="filter-tray" hidden></div>
+        </section>
+
+        <section class="timeline-section" aria-label="Event timeline">
+          <div class="timeline-meta">
+            <p class="result-count" id="result-count">Loading events…</p>
+          </div>
+          <div class="live-region sr-only" id="result-announcement" role="status" aria-live="polite"></div>
+          <div class="timeline-status" id="timeline-status"></div>
+          <div class="timeline" id="timeline"></div>
+        </section>
+      </main>
+
+      <aside class="detail-inspector" id="detail-inspector" aria-label="Event details" aria-live="polite"></aside>
+    </div>
+
+    <footer class="site-footer" id="disclaimer">
+      <span>Ritmo is a community guide. Confirm details with the organizer before you go.</span>
+      <span>Made for Mumbai dancers · 09 / 2026</span>
+    </footer>
+
+    <div class="drawer-layer" id="drawer-layer" hidden>
+      <button class="overlay-scrim" id="drawer-scrim" type="button" aria-label="Close event details"></button>
+      <section class="detail-drawer" id="detail-drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title"
+        tabindex="-1"></section>
+    </div>
+
+    <div class="menu-layer" id="site-menu-layer" hidden>
+      <button class="overlay-scrim" id="menu-scrim" type="button" aria-label="Close menu"></button>
+      <aside class="site-menu" id="site-menu" role="dialog" aria-modal="true" aria-labelledby="menu-title"
+        tabindex="-1">
+        <div class="menu-header">
+          <div>
+            <p class="eyebrow">Ritmo / 01</p>
+            <h2 id="menu-title">Move through the city</h2>
+          </div>
+          <button class="icon-button" id="menu-close" type="button" aria-label="Close menu">
+            <i class="ti ti-x" aria-hidden="true"></i>
           </button>
         </div>
-
-        <div class="masthead" id="top">
-          <div class="city-mark">Mumbai</div>
-          <div class="month-mark" aria-live="polite">
-            <button class="today-button" id="today-button" type="button" aria-label="Reload calendar and return to today">Today</button>
-            <span id="month-label">September 2026</span>
-          </div>
+        <nav class="menu-nav" aria-label="Site navigation">
+          <a class="menu-link is-current" href="#top">
+            <span>Mumbai</span>
+            <span class="menu-link-note">Current city</span>
+          </a>
+          <a class="menu-link is-disabled" href="#" aria-disabled="true" tabindex="-1">
+            <span>Delhi</span>
+            <span class="menu-link-note">Coming soon</span>
+          </a>
+          <a class="menu-link is-disabled" href="#" aria-disabled="true" tabindex="-1">
+            <span>Bengaluru</span>
+            <span class="menu-link-note">Coming soon</span>
+          </a>
+        </nav>
+        <div class="menu-footer">
+          <a href="#disclaimer">Disclaimer</a>
+          <a href="mailto:hello@ritmo.city">Contact</a>
         </div>
-        <div class="route-rule" aria-hidden="true"><span></span></div>
-      </header>
-
-      <div class="content-layout">
-        <main class="calendar-content" aria-busy="true">
-          <section class="date-navigation" aria-label="Calendar date range">
-            <button
-              class="range-button"
-              id="range-prev"
-              type="button"
-              aria-label="Previous month"
-              title="Previous month"
-            >
-              <i class="ti ti-chevron-left" aria-hidden="true"></i>
-            </button>
-            <div class="date-strip" id="date-strip"></div>
-            <button
-              class="range-button"
-              id="range-next"
-              type="button"
-              aria-label="Next month"
-              title="Next month"
-            >
-              <i class="ti ti-chevron-right" aria-hidden="true"></i>
-            </button>
-          </section>
-
-          <section class="utility-section" aria-label="Search and filters">
-            <div class="utility-row">
-              <form class="search-form" id="search-form" role="search">
-                <label class="field-label sr-only" for="search-input">Search events</label>
-                <div class="search-field">
-                  <i class="ti ti-search" aria-hidden="true"></i>
-                  <input
-                    id="search-input"
-                    name="search"
-                    type="search"
-                    autocomplete="off"
-                    placeholder="Title, venue or organizer"
-                    aria-describedby="result-announcement"
-                  />
-                  <button
-                    class="input-clear"
-                    id="search-clear"
-                    type="button"
-                    aria-label="Clear search"
-                    hidden
-                  >
-                    <i class="ti ti-x" aria-hidden="true"></i>
-                  </button>
-                </div>
-              </form>
-              <button
-                class="filter-toggle"
-                id="filters-toggle"
-                type="button"
-                aria-label="Filters"
-                title="Filters"
-                aria-controls="filter-tray"
-                aria-expanded="false"
-              >
-                <i class="ti ti-adjustments-horizontal" aria-hidden="true"></i>
-              </button>
-            </div>
-            <div class="filter-tray" id="filter-tray" hidden></div>
-          </section>
-
-          <section class="timeline-section" aria-label="Event timeline">
-            <div class="timeline-meta">
-              <p class="result-count" id="result-count">Loading events…</p>
-            </div>
-            <div class="live-region sr-only" id="result-announcement" role="status" aria-live="polite"></div>
-            <div class="timeline-status" id="timeline-status"></div>
-            <div class="timeline" id="timeline"></div>
-          </section>
-        </main>
-
-        <aside
-          class="detail-inspector"
-          id="detail-inspector"
-          aria-label="Event details"
-          aria-live="polite"
-        ></aside>
-      </div>
-
-      <footer class="site-footer" id="disclaimer">
-        <span>Ritmo is a community guide. Confirm details with the organizer before you go.</span>
-        <span>Made for Mumbai dancers · 09 / 2026</span>
-      </footer>
-
-      <div class="drawer-layer" id="drawer-layer" hidden>
-        <button class="overlay-scrim" id="drawer-scrim" type="button" aria-label="Close event details"></button>
-        <section
-          class="detail-drawer"
-          id="detail-drawer"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="drawer-title"
-          tabindex="-1"
-        ></section>
-      </div>
-
-      <div class="menu-layer" id="site-menu-layer" hidden>
-        <button class="overlay-scrim" id="menu-scrim" type="button" aria-label="Close menu"></button>
-        <aside
-          class="site-menu"
-          id="site-menu"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="menu-title"
-          tabindex="-1"
-        >
-          <div class="menu-header">
-            <div>
-              <p class="eyebrow">Ritmo / 01</p>
-              <h2 id="menu-title">Move through the city</h2>
-            </div>
-            <button class="icon-button" id="menu-close" type="button" aria-label="Close menu">
-              <i class="ti ti-x" aria-hidden="true"></i>
-            </button>
-          </div>
-          <nav class="menu-nav" aria-label="Site navigation">
-            <a class="menu-link is-current" href="#top">
-              <span>Mumbai</span>
-              <span class="menu-link-note">Current city</span>
-            </a>
-            <a class="menu-link is-disabled" href="#" aria-disabled="true" tabindex="-1">
-              <span>Delhi</span>
-              <span class="menu-link-note">Coming soon</span>
-            </a>
-            <a class="menu-link is-disabled" href="#" aria-disabled="true" tabindex="-1">
-              <span>Bengaluru</span>
-              <span class="menu-link-note">Coming soon</span>
-            </a>
-          </nav>
-          <div class="menu-footer">
-            <a href="#disclaimer">Disclaimer</a>
-            <a href="mailto:hello@ritmo.city">Contact</a>
-          </div>
-        </aside>
-      </div>
-
-      <noscript>
-        <div class="noscript-message">
-          JavaScript is required to load the Mumbai Latin Calendar.
-        </div>
-      </noscript>
+      </aside>
     </div>
-  </body>
+
+    <noscript>
+      <div class="noscript-message">
+        JavaScript is required to load the Mumbai Latin Calendar.
+      </div>
+    </noscript>
+  </div>
+</body>
+
 </html>

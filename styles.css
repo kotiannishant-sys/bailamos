@@ -1,26 +1,27 @@
 :root {
-  --color-night: #09080e;
+  --color-night: #0b0717;
   --color-secondary: #120f1a;
   --color-event: #181324;
   --color-drawer: #151020;
-  --color-separator: rgba(157, 78, 221, 0.22);
+  --color-separator: rgba(139, 92, 246, 0.22);
   --color-separator-soft: rgba(255, 255, 255, 0.08);
-  --color-text: #ffffff;
-  --color-text-muted: #d0c7de;
-  --color-text-faint: #8e83a3;
-  --color-ember: #ff2a85;
-  --color-ember-hover: #ff529e;
-  --color-brass: #9d4edd;
-  --color-brass-soft: rgba(157, 78, 221, 0.5);
+  --color-text: #f3f4f6;
+  --color-text-muted: #9ca3af;
+  --color-text-faint: rgba(156, 163, 175, 0.6);
+  --color-ember: #f72585;
+  --color-ember-hover: #ec4899;
+  --color-brass: #8b5cf6;
+  --color-brass-soft: rgba(139, 92, 246, 0.5);
   --color-cancelled: #ff4d6d;
-  --color-focus: #00f0ff;
-  --color-neon-blue: #00f0ff;
+  --color-focus: #8b5cf6;
+  --color-neon-blue: #8b5cf6;
   --color-neon-pink: #ff2a85;
   --color-neon-purple: #9d4edd;
   --shadow-drawer: 0 -12px 40px rgba(255, 42, 133, 0.25), 0 -4px 16px rgba(0, 0, 0, 0.7);
-  --font-display: "Bodoni Moda", Georgia, "Times New Roman", serif;
-  --font-body: "Archivo SemiCondensed", "Arial Narrow", Arial, sans-serif;
-  --font-mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  --font-display: "Outfit", sans-serif;
+  --font-logo: "Rock Salt", cursive;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "Outfit", sans-serif;
   --space-page: clamp(14px, 3.2vw, 32px);
   --space-related: 10px;
   --space-card: 10px;
@@ -29,7 +30,7 @@
   --radius-input: 6px;
   --radius-action: 6px;
   --radius-drawer: 20px;
-  --corner-ticket: 14px;
+  --corner-ticket: 20px;
   --motion-standard: 280ms cubic-bezier(0.16, 1, 0.3, 1);
   --motion-spring: 340ms cubic-bezier(0.34, 1.56, 0.64, 1);
 }
@@ -94,7 +95,7 @@ a {
 }
 
 .app-shell {
-  width: min(100%, 1180px);
+  width: min(100%, 1200px);
   min-height: 100vh;
   margin: 0 auto;
   padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom);
@@ -106,7 +107,7 @@ body.menu-is-open {
 }
 
 .site-header {
-  padding: 18px var(--space-page) 0;
+  padding: 40px var(--space-page) 20px;
 }
 
 .header-top,
@@ -137,11 +138,12 @@ body.menu-is-open {
 }
 
 .brand-name {
-  font-family: var(--font-display);
-  font-size: 26px;
-  font-weight: 700;
-  letter-spacing: -0.04em;
-  background: linear-gradient(135deg, #ff2a85 0%, #00f0ff 100%);
+  font-family: var(--font-logo);
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  background: linear-gradient(135deg, #f72585 0%, #7209b7 100%);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   filter: drop-shadow(0 0 10px rgba(255, 42, 133, 0.4));
@@ -218,7 +220,7 @@ body.menu-is-open {
   font-family: var(--font-display);
   font-size: clamp(22px, 3.5vw, 30px);
   font-weight: 600;
-  letter-spacing: -0.05em;
+  letter-spacing: normal;
   line-height: 1;
 }
 
@@ -256,7 +258,7 @@ body.menu-is-open {
   font-family: var(--font-display);
   font-size: clamp(25px, 4vw, 34px);
   font-weight: 600;
-  letter-spacing: -0.045em;
+  letter-spacing: normal;
   line-height: 1.05;
 }
 
@@ -429,7 +431,7 @@ body.menu-is-open {
   font-size: 30px;
   font-variant-numeric: tabular-nums;
   font-weight: 600;
-  letter-spacing: -0.05em;
+  letter-spacing: normal;
   line-height: 1;
 }
 
@@ -934,7 +936,7 @@ body.menu-is-open {
   font-family: var(--font-display);
   font-size: clamp(22px, 3.2vw, 28px);
   font-weight: 600;
-  letter-spacing: -0.04em;
+  letter-spacing: normal;
   line-height: 1.1;
 }
 
@@ -957,6 +959,7 @@ body.menu-is-open {
     opacity: 0;
     transform: translateY(12px) scale(0.98);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -1024,7 +1027,7 @@ body.menu-is-open {
 .event-ticket.is-selected {
   border-color: var(--color-neon-blue);
   background: #231a38;
-  box-shadow: 0 4px 28px rgba(0, 240, 255, 0.28), 0 0 2px #00f0ff;
+  box-shadow: 0 4px 28px rgba(139, 92, 246, 0.28), 0 0 2px #8b5cf6;
 }
 
 .event-ticket.is-cancelled {
@@ -1057,7 +1060,7 @@ body.menu-is-open {
   color: var(--color-neon-pink);
   font-size: 12px;
   font-weight: 600;
-  letter-spacing: -0.035em;
+  letter-spacing: normal;
   line-height: 1.1;
   white-space: nowrap;
 }
@@ -1140,7 +1143,7 @@ body.menu-is-open {
   font-family: var(--font-display);
   font-size: clamp(18px, 2.7vw, 22px);
   font-weight: 600;
-  letter-spacing: -0.035em;
+  letter-spacing: normal;
   line-height: 1.13;
 }
 
@@ -1477,7 +1480,7 @@ body.menu-is-open {
   font-family: var(--font-display);
   font-size: 30px;
   font-weight: 600;
-  letter-spacing: -0.05em;
+  letter-spacing: normal;
   line-height: 1.06;
   outline: 0;
 }
@@ -1792,13 +1795,16 @@ body.menu-is-open {
 }
 
 @starting-style {
+
   .drawer-layer:not([hidden]) .overlay-scrim,
   .menu-layer:not([hidden]) .overlay-scrim {
     opacity: 0;
   }
+
   .drawer-layer:not([hidden]) .detail-drawer {
     transform: translateY(100%);
   }
+
   .menu-layer:not([hidden]) .site-menu {
     transform: translateX(100%);
   }
@@ -1824,7 +1830,7 @@ body.menu-is-open {
   font-family: var(--font-display);
   font-size: 28px;
   font-weight: 600;
-  letter-spacing: -0.05em;
+  letter-spacing: normal;
   line-height: 1.05;
 }
 
@@ -1961,7 +1967,7 @@ body.menu-is-open {
 
 @media (max-width: 620px) {
   .site-header {
-    padding-top: 12px;
+    padding: 24px var(--space-page) 16px;
   }
 
   .brand-lockup {
