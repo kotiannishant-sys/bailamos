@@ -24,7 +24,10 @@
     <header class="site-header">
       <div class="header-top">
         <a class="brand-lockup" href="#top" aria-label="Ritmo home">
-          <span class="brand-name">Ritmo</span>
+          <div class="brand-title-row">
+            <span class="brand-name">Ritmo</span>
+            <span class="city-mark">Mumbai</span>
+          </div>
           <span class="brand-caption">Your ultimate dance socials guide</span>
         </a>
         <button class="icon-button" id="menu-toggle" type="button" aria-label="Open menu"
@@ -34,12 +37,16 @@
       </div>
 
       <div class="masthead" id="top">
-        <div class="city-mark">Mumbai</div>
         <div class="month-mark" aria-live="polite">
-          <button class="today-button" id="today-button" type="button"
-            aria-label="Reload calendar and return to today">Today</button>
           <span id="month-label">September 2026</span>
         </div>
+        <button class="today-button" id="today-button" type="button"
+          aria-label="Reload calendar" title="Reload calendar">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="refresh-icon">
+            <path d="M20 11A8.1 8.1 0 0 0 4.5 9M4 5v4h4"/>
+            <path d="M4 13a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4"/>
+          </svg>
+        </button>
       </div>
       <div class="route-rule" aria-hidden="true"><span></span></div>
     </header>

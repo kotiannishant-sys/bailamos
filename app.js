@@ -445,8 +445,9 @@ function renderDateStrip() {
     dom.rangeNext.setAttribute('aria-label', `Next month with events, ${formatMonthLabel(nextMonthStart)}`);
     dom.rangeNext.title = dom.rangeNext.getAttribute('aria-label');
   }
-  dom.monthLabel.textContent = formatMonthLabel(monthStart);
-  if (dom.monthIndex) dom.monthIndex.textContent = monthStart.slice(5, 7) + ' / ' + monthStart.slice(0, 4);
+  const activeMonthKey = appState.selectedDateKey || monthStart;
+  dom.monthLabel.textContent = formatMonthLabel(activeMonthKey);
+  if (dom.monthIndex) dom.monthIndex.textContent = activeMonthKey.slice(5, 7) + ' / ' + activeMonthKey.slice(0, 4);
 }
 
 function renderFilterTray() {
