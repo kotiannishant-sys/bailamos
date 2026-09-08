@@ -298,11 +298,12 @@ function getStatusInfo(event, now = getMumbaiNow()) {
     return { code: 'tomorrow', label: 'TOMORROW', icon: 'ti ti-calendar-event', cssClass: 'badge-tomorrow' };
   }
 
-  return { code: 'upcoming', label: 'UPCOMING', icon: 'ti ti-calendar', cssClass: 'badge-upcoming' };
+  // No status pill for events further out — their date context is clear from the calendar
+  return null;
 }
 
 function getStatus(event, now = getMumbaiNow()) {
-  return getStatusInfo(event, now).code;
+  return getStatusInfo(event, now)?.code ?? 'future';
 }
 
 function prepareEvent(rawEvent, index) {
@@ -419,6 +420,7 @@ function getElementIdForEvent(eventId) {
 
 function getStatusMarkup(event) {
   const info = getStatusInfo(event, appState.now);
+  if (!info) return '';
   return `<span class="status ${info.cssClass}"><i class="${info.icon}" aria-hidden="true"></i> ${info.label}</span>`;
 }
 
@@ -718,9 +720,7 @@ function renderDetailPanel(event, mode) {
         <div class="modal-top-badges">
           <div class="modal-left-badges">
             <span class="modal-badge badge-type">${escapeHtml(event.event_type || 'SOCIAL')}</span>
-            <span class="modal-badge ${statusInfo.cssClass}">
-              <i class="${statusInfo.icon}" aria-hidden="true"></i> ${statusInfo.label}
-            </span>
+            ${statusInfo ? `<span class="modal-badge ${statusInfo.cssClass}"><i class="${statusInfo.icon}" aria-hidden="true"></i> ${statusInfo.label}</span>` : ''}
           </div>
           <span class="modal-badge badge-time">
             <i class="ti ti-clock" aria-hidden="true"></i> ${escapeHtml(timeFormatted)}
@@ -907,19 +907,10 @@ function scrollDateCellIntoView(dateKey) {
 }
 
 function scrollToDate(dateKey) {
-  const group = document.getElementById(`date-group-${dateKey}`);
-  if (group) {
-    group.scrollIntoView({
-      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
-      block: 'start',
-    });
-    return;
-  }
-
-  dom.timelineStatus.scrollIntoView({
-    behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
-    block: 'start',
-  });
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // Scroll to the top so the sticky header+calendar is fully visible,
+  // and the events for the selected date appear naturally below it.
+  window.scrollTo({ top: 0, behavior: reduced ? 'auto' : 'smooth' });
 }
 
 function focusAfterOpen(type) {

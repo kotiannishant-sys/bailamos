@@ -1148,23 +1148,7 @@ body.menu-is-open {
   text-transform: uppercase;
 }
 
-.status-live {
-  color: var(--color-neon-pink);
-  border-color: rgba(255, 42, 133, 0.6);
-  background: rgba(255, 42, 133, 0.12);
-  box-shadow: 0 0 10px rgba(255, 42, 133, 0.35);
-}
 
-.status-upcoming {
-  color: var(--color-neon-blue);
-  border-color: rgba(0, 240, 255, 0.6);
-  background: rgba(0, 240, 255, 0.12);
-  box-shadow: 0 0 10px rgba(0, 240, 255, 0.35);
-}
-
-.status-cancelled {
-  color: var(--color-cancelled);
-}
 
 .ticket-title-row {
   align-items: flex-start;
@@ -1872,12 +1856,6 @@ body.menu-is-open {
   font-weight: 600;
 }
 
-.badge-upcoming {
-  background: rgba(139, 92, 246, 0.25);
-  border: 1px solid rgba(139, 92, 246, 0.4);
-  color: #d8b4fe;
-  font-weight: 600;
-}
 
 .badge-cancelled {
   background: rgba(255, 77, 109, 0.25);
