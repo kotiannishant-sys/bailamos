@@ -48,41 +48,41 @@
           </svg>
         </button>
       </div>
+      <section class="date-navigation" aria-label="Calendar date range">
+        <button class="range-button" id="range-prev" type="button" aria-label="Previous month" title="Previous month">
+          <i class="ti ti-chevron-left" aria-hidden="true"></i>
+        </button>
+        <div class="date-strip" id="date-strip"></div>
+        <button class="range-button" id="range-next" type="button" aria-label="Next month" title="Next month">
+          <i class="ti ti-chevron-right" aria-hidden="true"></i>
+        </button>
+      </section>
+
+      <section class="utility-section" aria-label="Search and filters">
+        <div class="utility-row">
+          <form class="search-form" id="search-form" role="search">
+            <label class="field-label sr-only" for="search-input">Search events</label>
+            <div class="search-field">
+              <i class="ti ti-search" aria-hidden="true"></i>
+              <input id="search-input" name="search" type="search" autocomplete="off"
+                placeholder="Title, venue or organizer" aria-describedby="result-announcement" />
+              <button class="input-clear" id="search-clear" type="button" aria-label="Clear search" hidden>
+                <i class="ti ti-x" aria-hidden="true"></i>
+              </button>
+            </div>
+          </form>
+          <button class="filter-toggle" id="filters-toggle" type="button" aria-label="Filters" title="Filters"
+            aria-controls="filter-tray" aria-expanded="false">
+            <i class="ti ti-adjustments-horizontal" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="filter-tray" id="filter-tray" hidden></div>
+      </section>
       <div class="route-rule" aria-hidden="true"><span></span></div>
     </header>
 
     <div class="content-layout">
       <main class="calendar-content" aria-busy="true">
-        <section class="date-navigation" aria-label="Calendar date range">
-          <button class="range-button" id="range-prev" type="button" aria-label="Previous month" title="Previous month">
-            <i class="ti ti-chevron-left" aria-hidden="true"></i>
-          </button>
-          <div class="date-strip" id="date-strip"></div>
-          <button class="range-button" id="range-next" type="button" aria-label="Next month" title="Next month">
-            <i class="ti ti-chevron-right" aria-hidden="true"></i>
-          </button>
-        </section>
-
-        <section class="utility-section" aria-label="Search and filters">
-          <div class="utility-row">
-            <form class="search-form" id="search-form" role="search">
-              <label class="field-label sr-only" for="search-input">Search events</label>
-              <div class="search-field">
-                <i class="ti ti-search" aria-hidden="true"></i>
-                <input id="search-input" name="search" type="search" autocomplete="off"
-                  placeholder="Title, venue or organizer" aria-describedby="result-announcement" />
-                <button class="input-clear" id="search-clear" type="button" aria-label="Clear search" hidden>
-                  <i class="ti ti-x" aria-hidden="true"></i>
-                </button>
-              </div>
-            </form>
-            <button class="filter-toggle" id="filters-toggle" type="button" aria-label="Filters" title="Filters"
-              aria-controls="filter-tray" aria-expanded="false">
-              <i class="ti ti-adjustments-horizontal" aria-hidden="true"></i>
-            </button>
-          </div>
-          <div class="filter-tray" id="filter-tray" hidden></div>
-        </section>
 
         <section class="timeline-section" aria-label="Event timeline">
           <div class="timeline-meta">

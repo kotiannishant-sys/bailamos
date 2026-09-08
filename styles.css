@@ -382,19 +382,11 @@ body.menu-is-open {
 }
 
 .date-navigation {
-  position: sticky;
-  top: var(--header-sticky-height, 132px);
-  z-index: 40;
   display: flex;
   align-items: center;
   gap: 3px;
   margin-top: 10px;
-  padding: 8px 0;
-  background: rgba(11, 7, 23, 0.94);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255, 42, 133, 0.15);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  padding: 8px 0 4px;
 }
 
 .date-strip {
@@ -677,14 +669,8 @@ body.menu-is-open {
 }
 
 .utility-section {
-  position: sticky;
-  z-index: 30;
-  top: calc(var(--header-sticky-height, 132px) + var(--date-strip-sticky-height, 94px));
-  margin-top: 10px;
-  padding: 8px 0;
-  background: rgba(11, 7, 23, 0.94);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  margin-top: 8px;
+  padding: 6px 0;
 }
 
 .utility-row {
@@ -1844,19 +1830,60 @@ body.menu-is-open {
 }
 
 .badge-status {
-  background: rgba(139, 92, 246, 0.35);
-  border: 1px solid rgba(139, 92, 246, 0.5);
-  color: #ffffff;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
-.badge-status.badge-today {
+.badge-live {
+  background: #ff2a85;
+  border: 1px solid #ff4d9e;
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 0 16px rgba(255, 42, 133, 0.6);
+  animation: pulseLive 2s infinite;
+}
+
+@keyframes pulseLive {
+  0% { box-shadow: 0 0 0 0 rgba(255, 42, 133, 0.7); }
+  70% { box-shadow: 0 0 0 8px rgba(255, 42, 133, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 42, 133, 0); }
+}
+
+.badge-starting-soon {
+  background: #ff9f1c;
+  border: 1px solid #ffbf69;
+  color: #000000;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(255, 159, 28, 0.4);
+}
+
+.badge-today {
   background: #ffcc00;
-  border-color: #ffd700;
+  border: 1px solid #ffd700;
   color: #000000;
   font-weight: 700;
   box-shadow: 0 4px 14px rgba(255, 204, 0, 0.4);
+}
+
+.badge-tomorrow {
+  background: rgba(157, 78, 221, 0.4);
+  border: 1px solid rgba(157, 78, 221, 0.7);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.badge-upcoming {
+  background: rgba(139, 92, 246, 0.25);
+  border: 1px solid rgba(139, 92, 246, 0.4);
+  color: #d8b4fe;
+  font-weight: 600;
+}
+
+.badge-cancelled {
+  background: rgba(255, 77, 109, 0.25);
+  border: 1px solid rgba(255, 77, 109, 0.5);
+  color: #ff4d6d;
+  font-weight: 600;
 }
 
 .banner-expand-trigger {

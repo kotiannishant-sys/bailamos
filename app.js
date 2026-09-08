@@ -265,17 +265,44 @@ function splitDanceStyles(value) {
     .filter(Boolean);
 }
 
-function getStatus(event, now = getMumbaiNow()) {
-  if (event.cancelled) return 'cancelled';
-
-  if (event.endMs && now.getTime() >= event.startMs && now.getTime() <= event.endMs) {
-    return 'live';
+function getStatusInfo(event, now = getMumbaiNow()) {
+  if (event.cancelled) {
+    return { code: 'cancelled', label: 'CANCELLED', icon: 'ti ti-circle-x', cssClass: 'badge-cancelled' };
   }
 
-  const minutesUntilStart = (event.startMs - now.getTime()) / 60000;
-  if (minutesUntilStart > 0 && minutesUntilStart <= 30) return 'upcoming';
+  const nowMs = now.getTime();
+  const startMs = event.startMs;
+  const endMs = event.endMs || (startMs + 4 * 3600 * 1000);
 
-  return '';
+  if (nowMs >= startMs && nowMs <= endMs) {
+    return { code: 'live', label: 'LIVE', icon: 'ti ti-broadcast', cssClass: 'badge-live' };
+  }
+
+  const msToStart = startMs - nowMs;
+  const minutesToStart = msToStart / 60000;
+
+  if (minutesToStart > 0 && minutesToStart <= 30) {
+    return { code: 'starting-soon', label: 'STARTING SOON', icon: 'ti ti-clock-play', cssClass: 'badge-starting-soon' };
+  }
+
+  const todayKey = getDateKey(now);
+  const tomorrow = new Date(now);
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  const tomorrowKey = getDateKey(tomorrow);
+
+  if (event.dateKey === todayKey) {
+    return { code: 'today', label: 'TODAY', icon: 'ti ti-flame', cssClass: 'badge-today' };
+  }
+
+  if (event.dateKey === tomorrowKey) {
+    return { code: 'tomorrow', label: 'TOMORROW', icon: 'ti ti-calendar-event', cssClass: 'badge-tomorrow' };
+  }
+
+  return { code: 'upcoming', label: 'UPCOMING', icon: 'ti ti-calendar', cssClass: 'badge-upcoming' };
+}
+
+function getStatus(event, now = getMumbaiNow()) {
+  return getStatusInfo(event, now).code;
 }
 
 function prepareEvent(rawEvent, index) {
@@ -321,8 +348,13 @@ async function loadEvents(url = 'events.json') {
     throw new Error('The events file does not contain an events array.');
   }
 
+  const nowMs = getMumbaiNow().getTime();
   return data.events
     .map(prepareEvent)
+    .filter((event) => {
+      const endMs = event.endMs || (event.startMs + 4 * 3600 * 1000);
+      return endMs >= nowMs;
+    })
     .sort((first, second) => first.startMs - second.startMs);
 }
 
@@ -386,16 +418,8 @@ function getElementIdForEvent(eventId) {
 }
 
 function getStatusMarkup(event) {
-  const status = getStatus(event, appState.now);
-  if (!status) return '';
-
-  const labels = {
-    live: 'Live',
-    upcoming: 'Upcoming',
-    cancelled: 'Cancelled',
-  };
-
-  return `<span class="status status-${status}">${labels[status]}</span>`;
+  const info = getStatusInfo(event, appState.now);
+  return `<span class="status ${info.cssClass}"><i class="${info.icon}" aria-hidden="true"></i> ${info.label}</span>`;
 }
 
 function renderDateStrip() {
@@ -670,7 +694,7 @@ function renderInfoRow(iconSvg, label, value) {
 
 function renderDetailPanel(event, mode) {
   const headingId = `${mode}-title`;
-  const status = getStatus(event, appState.now);
+  const statusInfo = getStatusInfo(event, appState.now);
   const venueUrl = safeUrl(event.venue_url);
   const organizerUrl = safeUrl(event.organizer_url);
   const postUrl = safeUrl(event.post_url);
@@ -678,7 +702,6 @@ function renderDetailPanel(event, mode) {
   const styles = event.styles && event.styles.length ? event.styles.join(' • ') : (event.dance_styles || '');
   const cost = formatCost(event.cost, event.currency);
   const timeFormatted = formatTimeRange(event);
-  const isToday = event.dateKey === appState.todayKey;
 
   return `
     <div class="ritmo-modal-card">
@@ -695,8 +718,8 @@ function renderDetailPanel(event, mode) {
         <div class="modal-top-badges">
           <div class="modal-left-badges">
             <span class="modal-badge badge-type">${escapeHtml(event.event_type || 'SOCIAL')}</span>
-            <span class="modal-badge badge-status${isToday ? ' badge-today' : ''}">
-              <i class="${isToday ? 'ti ti-flame' : 'ti ti-calendar-event'}" aria-hidden="true"></i> ${isToday ? 'TODAY' : (status === 'live' ? 'LIVE' : (status === 'cancelled' ? 'CANCELLED' : 'UPCOMING'))}
+            <span class="modal-badge ${statusInfo.cssClass}">
+              <i class="${statusInfo.icon}" aria-hidden="true"></i> ${statusInfo.label}
             </span>
           </div>
           <span class="modal-badge badge-time">
